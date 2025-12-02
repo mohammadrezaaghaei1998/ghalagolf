@@ -376,25 +376,25 @@
 
 
 
-<script>
-    {% if messages %}
-        {% for message in messages %}
-            toastr.options = {
-                "closeButton": true,
-                "progressBar": true,
-                "timeOut": "5000"
-            };
+	<script>
+		{% if messages %}
+			{% for message in messages %}
+				toastr.options = {
+					"closeButton": true,
+					"progressBar": true,
+					"timeOut": "5000"
+				};
 
-            {% if message.tags == "success" %}
-                toastr.success("{{ message }}");
-            {% elif message.tags == "error" %}
-                toastr.error("{{ message }}");
-            {% else %}
-                toastr.info("{{ message }}");
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-</script>
+				{% if message.tags == "success" %}
+					toastr.success("{{ message }}");
+				{% elif message.tags == "error" %}
+					toastr.error("{{ message }}");
+				{% else %}
+					toastr.info("{{ message }}");
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</script>
 
 
 </body>

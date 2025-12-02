@@ -123,52 +123,54 @@
 				<div class="row">
 					<h2 class="m-0 p-0 mb-2">Golf Academy Inquiry Form</h2>
                     <p class="form-subtitle text-center text-white p-0 m-0 mb-4">Get in touch to begin your training journey with our certified coaches.</p>
+					<form method="POST">
+						{% csrf_token %}
 
-					<form>
 						<div class="form-group">
-							<input type="text" class="form-control" id="fullName" placeholder=" " required>
-							<label for="fullName">Full Name</label>
+							<input type="text" class="form-control" name="full_name" id="full_name" placeholder=" " required>
+							<label for="full_name">Full Name</label>
 						</div>
 
 						<div class="form-group">
-							<input type="email" class="form-control" id="email" placeholder=" " required>
+							<input type="email" class="form-control" name="email" id="email" placeholder=" " required>
 							<label for="email">Email Address</label>
 						</div>
 
 						<div class="form-group">
-							<input type="tel" class="form-control" id="phone" placeholder=" " required>
+							<input type="tel" class="form-control" name="phone" id="phone" placeholder=" " required>
 							<label for="phone">Phone Number</label>
 						</div>
 
 						<div class="form-group">
-							<select id="membershipType" class="form-select" required>
-							<option value="" disabled selected hidden></option>
-							<option>Individual</option>
-							<option>Family</option>
-							<option>Corporate</option>
-							<option>Junior</option>
-							<option>Seasonal</option>
+							<select id="membership_type" name="membership_type" class="form-select" required>
+								<option value="" disabled selected hidden></option>
+								<option>Individual</option>
+								<option>Family</option>
+								<option>Corporate</option>
+								<option>Junior</option>
+								<option>Seasonal</option>
 							</select>
-							<label for="membershipType">Membership Type</label>
+							<label for="membership_type">Membership Type</label>
 						</div>
 
 						<div class="form-group">
-							<textarea class="form-control" id="message" rows="3" placeholder=" "></textarea>
+							<textarea class="form-control" name="message" id="message" rows="3" placeholder=" "></textarea>
 							<label for="message">Additional Notes</label>
 						</div>
 
 						<div class="form-group">
-							<input type="number" class="form-control" id="handicap" placeholder=" ">
+							<input type="number" class="form-control" name="handicap" id="handicap" placeholder=" ">
 							<label for="handicap">Golf Handicap (Optional)</label>
 						</div>
 
 						<div class="form-group">
-							<input type="date" class="form-control" id="dob" placeholder=" ">
+							<input type="date" class="form-control" name="dob" id="dob" placeholder=" " required>
 							<label for="dob">Date of Birth</label>
 						</div>
 
 						<button type="submit" class="btn btn-submit mt-3">Send Application</button>
 					</form>
+
 				</div>
 			</div>
 		</div>
@@ -202,13 +204,13 @@
 		</div>
 	</section>
 
-<style>
-	.modal-content {
-  display: flex !important;
-  justify-content: center !;
-  padding: 1rem !important; /* add some padding if you want */
-}
-</style>
+	<style>
+		.modal-content {
+			display: flex !important;
+			justify-content: center !;
+			padding: 1rem !important; /* add some padding if you want */
+		}
+	</style>
 
 	<!-- Video Modal -->
 	<div class="modal fade" id="videoModal" tabindex="-1">
@@ -419,6 +421,11 @@
 
 
 	
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
 	<script src="{% static 'js/ui-easing.js' %}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -560,6 +567,33 @@
 })();
 
 </script>
+
+
+
+
+
+
+
+<script>
+    {% if messages %}
+        {% for message in messages %}
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "timeOut": "5000"
+            };
+
+            {% if message.tags == "success" %}
+                toastr.success("{{ message }}");
+            {% elif message.tags == "error" %}
+                toastr.error("{{ message }}");
+            {% else %}
+                toastr.info("{{ message }}");
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</script>
+
 </body>
 
 </html>
