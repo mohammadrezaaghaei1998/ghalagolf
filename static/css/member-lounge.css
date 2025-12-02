@@ -1,0 +1,51 @@
+.lounge-tab {
+    font-weight: 500;
+    border: none !important;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #666;
+}
+
+.lounge-tab.active {
+    border-bottom: 3px solid #8a1538 !important;
+    color: #8a1538 !important;
+    background: transparent !important;
+}
+
+.feature-box {
+    background: #fafafa;
+    border: 1px solid #ececec;
+    text-align: left;
+}
+
+.lounge-table {
+    background: #f7f7fc;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.lounge-table thead tr {
+    background: #f1f1f8;
+    font-weight: 600;
+}
+
+.lounge-table td,
+.lounge-table th {
+    padding: 18px;
+    background-color: rgba(247, 247, 247, 0.055);
+}
+
+
+.lounge-banner {
+    height: 350px;
+    border-radius: 24px;
+}
+.lounge-banner img {
+    object-fit: cover;
+    height: 100%;
+}
+.feature-icon {
+    font-size: 35px;
+    color: var(--accent-color);  
+    display: block;
+}

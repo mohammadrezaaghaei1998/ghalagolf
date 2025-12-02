@@ -1,0 +1,739 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<title>Ghala Golf | Gallery</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="Ghala Golf | Gallery">
+	<meta name="keywords" content="Ghala Golf | Gallery">
+	<meta name="description" content="Ghala Golf | Gallery">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
+
+</head>
+
+<body>
+
+	<div class="preloader"></div>
+
+	<div class="nav nav-overlay" style="z-index: 10 !important;">
+		<div class="nav__content">
+			<div class="container">
+				<div class="row p-4 p-md-0 flex-column-reverse flex-md-row g-md-5 nav__block">
+					<div class="col-md-4">
+						<ul class="nav__list d-md-block">
+							<li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
+							<li class="nav__list-item " ><a href="{% url 'about-us' %}" class="hover-target">About Us</a></li>
+							<li class="nav__list-item"><a href="{% url 'news' %}" class="hover-target">News</a></li>
+							<li class="nav__list-item"><a href="{% url 'membership' %}" class="hover-target">Membershp</a></li>
+							<li class="nav__list-item "><a href="{% url 'golf-academy' %}" class="hover-target">Golf Academy</a></li>
+							<li class="nav__list-item"><a href="{% url 'calendar' %}" class="hover-target">Calendar</a></li>
+							<li class="nav__list-item  active-nav"><a href="{% url 'gallery' %}" class="hover-target">Gallery</a></li>
+							<li class="nav__list-item"><a href="{% url 'sponsors' %}" class="hover-target">Sponsors</a></li>
+							<li class="nav__list-item"><a href="{% url 'member-lounge' %}" class="hover-target">Member Lounge</a></li>
+							<li class="nav__list-item "><a href="{% url 'contact-us' %}" class="hover-target">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<h3 class="text-white fw-bold nav__block-item">Unwind, Play, Connect</h3>
+						<p class="text-light nav__block-item">Rooted in history and inspired by nature, Ghala Golf Club is dedicated to providing an exceptional environment to unwind, challenge yourself, and connect with others.
+						</p>
+						
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<ul class="list-unstyled text-light nav__block-item">
+							<li class="menu-item">
+								<i class="icon icon-location me-2"></i>2Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+							</li>
+							<li class="menu-item ">
+								<i class="icon icon-phone me-2 "></i>
+								+968 9219 4957
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-envelope-o me-2"></i>
+								<a href="mailto:proshop@ghalagolf.com"
+									class="text-light">proshop@ghalagolf.com
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- <div class="col-md-3 text-white">
+						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
+						<ul class="list-unstyled nav__block-item">
+							<li><a href="index.html" class="text-white">Onepage </a></li>
+							<li><a href="index.html" class="text-white">Styles </a></li>
+							<li><a href="index.html" class="text-white">Blog </a></li>
+							<li><a href="index.html" class="text-white">Single Post </a></li>
+							<li><a href="index.html" class="text-white">Contact us </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
+							<li><a href="index.html" class="text-white">About Us </a></li>
+							<li><a href="index.html" class="text-white">Our Team </a></li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-logo">
+		<a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+	</div>
+
+	<div class="side-nav-bar" style="z-index: 10 !important;">
+		<input id="menu-toggle" type="checkbox" />
+		<label class="menu-btn" for="menu-toggle">
+			<span></span>
+		</label>
+	</div>
+
+
+
+
+
+	<!-- <div class="hero">
+		<div class="hero-inner">
+				<div class="hero-title">
+					<h1 class="text-light title font-2">time machine</h1>
+					<p class="text-capitalize text-light">here starts awesomeness</p>
+				</div>
+				<a href="#" class="sd">Scroll Down</a>
+		</div>
+	</div>
+	<div class="content clearfix">
+		<div class="container" style="padding-top: 60px">
+			<div class="row">
+				<div class="col-md-5">
+					<h2 class="text-uppercase">rame ipsum</h2>
+					<p class="font-alt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptatibus molestia!</p>
+				</div>
+				<div class="col-md-7">
+					<p style="padding-top: 47px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam earum eos corporis totam vel, eaque sapiente officiis sint culpa inventore blanditiis hic cupiditate illo nam assumenda reprehenderit suscipit dolorum.</p>			
+				</div>
+			</div>	
+		</div>
+		<div class="container" style="height: 100vh"></div>
+	</div> -->
+
+
+
+
+	<div class="hero">
+		<div class="hero-inner">
+			
+			{% if item and item.video %}
+				<video autoplay muted loop playsinline class="hero-video">
+					<source src="{{ item.video.url }}" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			{% else %}
+				<!-- fallback video -->
+				<video autoplay muted loop playsinline class="hero-video">
+					<source src="{% static 'videos/video-header.mp4' %}" type="video/mp4">
+				</video>
+			{% endif %}
+
+				<div class="hero-title">
+					<h1 class="title font-2">
+						{{ item.title|default:"The Showcase" }}
+					</h1>
+
+					<p class="text-capitalize text-light">
+						{{ item.description|default:"A curated view of our legacy, innovation, and performance." }}
+					</p>
+				</div>
+
+				<a href="#" class="sd">Scroll Down</a>
+		</div>
+	</div>
+
+
+
+
+	<div class="content clearfix">
+		<section id="portfolio" class="scrollspy-section bg-dark padding-large">
+				<div class="container">
+
+					<div class="row text-center">
+						<div class="col-md-12">
+
+							<div class="section-header">
+								<div class="title">
+									<span>Some of Our Activities</span>
+								</div>
+								<h2 class="section-title light">Our Mark</h2>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+						<!-- <div id="filters" class="button-group d-flex flex-wrap gap-4 py-5" data-aos="fade-up">
+							<a href="#" class="btn btn-outline-light rounded-pill text-uppercase is-checked"
+								data-filter=".design">Top</a>
+							<a href="#" class="btn btn-outline-light rounded-pill text-uppercase"
+								data-filter=".interior">Club</a>
+							<a href="#" class="btn btn-outline-light rounded-pill text-uppercase"
+								data-filter=".landscape">Tournaments</a>
+							<a href="#" class="btn btn-outline-light rounded-pill text-uppercase"
+								data-filter=".construction">Moments</a>
+						</div> -->
+
+
+						<div id="filters" class="button-group d-flex flex-wrap gap-4 py-5">
+							<a href="#" class="btn btn-outline-light rounded-pill text-uppercase is-checked" data-filter="*">
+								All
+							</a>
+
+							{% for cat in categories %}
+								<a href="#" class="btn btn-outline-light rounded-pill text-uppercase"
+									data-filter=".cat-{{ cat.id }}">
+									{{ cat.name }}
+								</a>
+							{% endfor %}
+						</div>
+
+
+					</div>
+
+					<div class="grid p-0 clearfix row row-cols-2 row-cols-lg-3 row-cols-xl-3">
+
+						{% for pic in pictures %}
+							<div class="col mb-4 portfolio-item cat-{{ pic.category.id }}">
+								<a href="{{ pic.image.url }}" class="image-link" title="{{ pic.title }}">
+									<img src="{{ pic.image.url }}" class="img-fluid" alt="{{ pic.title }}">
+								</a>
+							</div>
+						{% endfor %}
+
+					</div>
+
+
+				</div>
+		</section>
+		<!-- <div class="container" style="height: 100vh"></div> -->
+	</div>
+
+
+
+<style>
+	.slick-arrow.slick-hidden {
+    display: flex;
+}
+</style>
+
+
+	<section class="slider video-slider">
+		<div class="container text-center mb-5">
+			<div class="section-header">
+				<div class="title"><span>Stories in Action</span></div>
+				<h2 class="section-title">Our Legacy in Motion</h2>
+			</div>
+		</div>
+
+		<button class="slider__control prev"><i class="fa-solid fa-chevron-left"></i></button>
+		<button class="slider__control next"><i class="fa-solid fa-chevron-right"></i></button>
+
+		<div class="slider__container" data-multislide="false" data-step="2.5">
+
+			{% for video in videos %}
+				<div class="slider__item">
+					<div class="video-box">
+
+						<video 
+							poster="{{ video.poster.url }}" 
+							class="video-preview">
+							<source src="{{ video.video_file.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+
+						<div class="play-btn" data-video="{{ video.video_file.url }}">
+							<i class="fa-solid fa-play"></i>
+						</div>
+					</div>
+
+					<h4 class="video-title">{{ video.title }}</h4>
+
+					{% if video.description %}
+					<p class="video-desc">{{ video.description }}</p>
+					{% endif %}
+
+				</div>
+			{% endfor %}
+			
+		</div>
+
+		<div class="slider-progress">
+			<div class="slider-progress-bar"></div>
+		</div>
+	</section>
+
+
+	<div id="videoModal" class="video-modal">
+		<div class="modal-content">
+			<span class="close-btn" style="background-color: transparent !important;">&times;</span>
+
+			<video id="modalVideo" controls>
+				<source id="modalVideoSource" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</div>
+	</div>
+
+
+
+	<section id="intro" class="scrollspy-section">
+		<div class="main-slider">
+			<div class="slider-item jarallax d-flex align-items-center justify-content-center text-center" data-speed="0.2" style="height: 70vh; position: relative;">
+			<img src="{% static 'images/sponsors.jpg' %}" alt="banner" class="jarallax-img">
+
+			<div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.45);"></div>
+
+				<div class="container position-relative text-white">
+					<div class="col-lg-8 mx-auto">
+					<h2 class="mb-4 font-2">Become a Member of Ghala Golf Club</h2>
+					<p class="mb-4">
+						Join Ghala Golf Club and immerse yourself in a world of exceptional courses, exclusive events, and a vibrant golfing community. 
+						Whether you're looking to improve your game or enjoy a relaxing round with friends, Ghala Golf Club offers the perfect environment for golfers of all levels.
+					</p>
+					<a href="{% url 'golf-academy' %}">
+						<button class="btn btn-join px-4 py-2">Join Now</button>
+					</a>
+
+					<!-- <a href="{% url 'golf-academy' %}" 
+								class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center" 
+								style="border-radius: 0 !important; min-width: 280px !important;">
+								<span>Become a Member</span>
+								<i class="fas fa-arrow-right"></i>
+							</a> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+	<section class="top-videos container-fluid pt-5 pb-5">
+
+		<div class="container text-center mb-5">
+			<div class="section-header">
+				<div class="title"><span>The Art of Performance</span></div>
+				<h2 class="section-title">Most Viewed</h2>
+			</div>
+		</div>
+
+		<!-- LEFT MAIN VIDEO -->
+		{% if left_video %}
+			<div class="left-video" data-video-src="{{ left_video.video_file.url }}">
+				<img src="{{ left_video.thumbnail.url }}" alt="{{ left_video.title }}" class="thumbnail-video">
+
+				<div class="video-overlay">
+				<span class="video-title-top">{{ left_video.title }}</span>
+				<button
+					class="play-btn-top"
+					
+					data-video-src="{{ left_video.video_file.url }}">
+					▶
+				</button>
+				</div>
+			</div>
+		{% endif %}
+
+
+		<!-- RIGHT SMALL VIDEOS -->
+		<div class="right-videos">
+			{% for video in right_videos %}
+				<div data-video-src="{{ video.video_file.url }}">
+					<img src="{{ video.thumbnail.url }}" alt="{{ video.title }}" class="thumbnail-video">
+
+					<div class="video-overlay">
+						<span class="video-title-top">{{ video.title }}</span>
+						<button
+						class="play-btn-top"
+						
+						data-video-src="{{ video.video_file.url }}">
+						▶
+						</button>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		
+
+	</section>
+	<div id="topvideomodal" class="topvideomodal">
+		<div class="topvideomodal-content">
+			<span class="topvideomodal-close-btn ">&times;</span>
+			<video id="topvideomodalVideo" controls poster="" width="100%" height="auto">
+			<source src="" type="video/mp4">
+			Your browser does not support HTML5 video.
+			</video>
+			<div id="topvideomodalVideoTitle" class="topvideomodal-video-title"></div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+	<footer id="footer">
+	
+		<div class="container">
+			
+			<div class="row">
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-01">
+						<img src="{% static 'images/logo.png' %}" alt="logo" class="footer-logo">
+						<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iste consequatur nulla iusto omnis aliquam alias at libero? Voluptates, minus!</p> -->
+						
+					</div>
+
+				</div>
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-02">
+						<h5>quick links</h5>
+						<ul class="menu-list">
+							<li class="menu-item">
+								<a href="{% url 'index' %}">home</a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'about-us' %}">about us </a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'membership' %}">membership</a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'calendar' %}">calendar</a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'news' %}">news</a>
+							</li>
+							
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-03">
+						<h5>contact info</h5>
+						<ul class="menu-list">
+							
+							<li class="menu-item">
+								<i class="icon icon-location2"></i>Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-phone"></i>+968 9219 4957
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-envelope-o"></i><a href="mailto:proshop@ghalagolf.com" class="mail-id">proshop@ghalagolf.com</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-04">
+						<h5>Follow Us</h5>
+						<div class="social-links">
+							<ul>
+								<li>
+									<a href="https://www.facebook.com/GhalaGolfClub/"><i class="icon icon-facebook"></i></a>
+								</li>
+								
+								<li>
+									<a href="https://www.instagram.com/ghalagolfclub?igsh=MTl0eW5udzcyb2FsbA=="><i class="fab fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/company/ghala-golf-club/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="copyright">
+						<p> All rights reserved.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="copyright text-right">
+						<p>© 2025 <a href="{% url 'index' %}"target="_blank">Ghala Golf Club.</a> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+	<script src="{% static 'js/ui-easing.js' %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+
+
+
+
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const modal = document.getElementById('topvideomodal');
+			const modalVideo = document.getElementById('topvideomodalVideo');
+			const modalVideoTitle = document.getElementById('topvideomodalVideoTitle');
+			const closeBtn = document.querySelector('.topvideomodal-close-btn');
+
+			function openModal(videoSrc, posterSrc, title) {
+				modal.style.display = 'flex';
+				modalVideo.src = videoSrc;
+				modalVideo.poster = posterSrc || '';
+				modalVideoTitle.textContent = title || '';
+				modalVideo.load();
+				modalVideo.play();
+			}
+
+			function closeModal() {
+				modal.style.display = 'none';
+				modalVideo.pause();
+				modalVideo.currentTime = 0;
+				modalVideo.src = '';
+			}
+
+			document.querySelectorAll('.play-btn-top').forEach(btn => {
+				btn.addEventListener('click', (e) => {
+				e.preventDefault();
+				const videoSrc = btn.getAttribute('data-video-src');
+				const parentDiv = btn.closest('[data-video-src]');
+				const poster = parentDiv.querySelector('img.thumbnail-video')?.src || '';
+				const title = parentDiv.querySelector('.video-title-top')?.textContent || '';
+				openModal(videoSrc, poster, title);
+				});
+			});
+
+			closeBtn.addEventListener('click', closeModal);
+
+			modal.addEventListener('click', (e) => {
+				if (e.target === modal) {
+				closeModal();
+				}
+			});
+
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape' && modal.style.display === 'flex') {
+				closeModal();
+				}
+			});
+		});
+
+	</script>
+
+
+
+
+
+
+
+
+    <script>
+        $('.sd').click(function (e) {
+            e.preventDefault();
+            $('.hero, .content').addClass('scrolled');
+        });
+
+        window.addEventListener('wheel', function (e) {
+            if (e.deltaY > 0 && !$('.hero').hasClass('scrolled')) {
+                $('.hero, .content').addClass('scrolled');
+        }
+        });
+
+        window.addEventListener('wheel', function (e) {
+            if (e.deltaY < 0 && $(window).scrollTop() === 0 && $('.hero').hasClass('scrolled')) {
+                $('.hero, .content').removeClass('scrolled');
+            }
+        });
+
+    </script>
+
+
+	<script>
+		const sliders = [...document.querySelectorAll(".slider__container")];
+		const prevBtns = [...document.querySelectorAll(".slider__control.prev")];
+		const nextBtns = [...document.querySelectorAll(".slider__control.next")];
+		const progressBar = document.querySelector('.slider-progress-bar');
+
+		sliders.forEach((slider, i) => {
+		const sliderItems = [...slider.querySelectorAll(".slider__item")];
+		const totalItems = sliderItems.length;
+		let currentIndex = 0;
+
+		let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+
+	
+		const updateProgress = () => {
+		const scrollWidth = slider.scrollWidth - slider.clientWidth;
+		const progress = (slider.scrollLeft / scrollWidth) * 100;
+		progressBar.style.width = `${progress}%`;
+		};
+		updateProgress();
+
+		slider.addEventListener('scroll', updateProgress);
+
+
+		prevBtns[i].addEventListener("click", () => {
+			if (currentIndex > 0) currentIndex--;
+			slider.scrollTo({ left: sliderItems[currentIndex].offsetLeft, behavior: "smooth" });
+			updateProgress();
+		});
+
+		nextBtns[i].addEventListener("click", () => {
+			if (currentIndex < totalItems - 1) currentIndex++;
+			slider.scrollTo({ left: sliderItems[currentIndex].offsetLeft, behavior: "smooth" });
+			updateProgress();
+		});
+
+		const dragStart = e => {
+			isDragStart = true;
+			prevPageX = e.pageX || e.touches[0].pageX;
+			prevScrollLeft = slider.scrollLeft;
+		};
+
+		const dragging = e => {
+			if (!isDragStart) return;
+			e.preventDefault();
+			isDragging = true;
+			slider.classList.add("dragging");
+			positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+			slider.scrollLeft = prevScrollLeft - positionDiff;
+		};
+
+		const dragStop = () => {
+			if (!isDragging) { isDragStart = false; return; }
+			isDragStart = false;
+			isDragging = false;
+			slider.classList.remove("dragging");
+
+			const itemWidth = sliderItems[0].clientWidth + 40;
+			currentIndex = Math.round(slider.scrollLeft / itemWidth);
+			currentIndex = Math.min(totalItems - 1, Math.max(0, currentIndex));
+			slider.scrollTo({ left: sliderItems[currentIndex].offsetLeft, behavior: "smooth" });
+			updateProgress();
+		};
+
+		slider.addEventListener("mousedown", dragStart);
+		slider.addEventListener("mousemove", dragging);
+		slider.addEventListener("mouseup", dragStop);
+		slider.addEventListener("mouseleave", dragStop);
+		slider.addEventListener("touchstart", dragStart);
+		slider.addEventListener("touchmove", dragging);
+		slider.addEventListener("touchend", dragStop);
+		});
+	</script>
+
+
+
+
+<!-- Our Legacy in Motion Modal -->
+<script>
+	const playButtons = document.querySelectorAll('.play-btn');
+	const modal = document.getElementById('videoModal');
+	const modalVideo = document.getElementById('modalVideo');
+	const modalVideoSource = document.getElementById('modalVideoSource');
+	const closeModal = document.querySelector('.close-btn');
+
+	playButtons.forEach(button => {
+	button.addEventListener('click', function() {
+		const videoSrc = this.getAttribute('data-video'); 
+		modalVideoSource.setAttribute('src', videoSrc);
+		modalVideo.load();
+		modal.style.display = 'flex';
+
+		modalVideo.muted = true;
+		modalVideo.play().catch(err => console.log('Autoplay blocked:', err));
+	});
+	});
+
+	closeModal.addEventListener('click', () => {
+	modal.style.display = 'none';
+	modalVideo.pause();
+	modalVideo.currentTime = 0;
+	});
+
+	window.addEventListener('click', (e) => {
+	if (e.target === modal) {
+		modal.style.display = 'none';
+		modalVideo.pause();
+		modalVideo.currentTime = 0;
+	}
+	});
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

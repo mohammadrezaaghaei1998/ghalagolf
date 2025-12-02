@@ -1,0 +1,411 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Ghala Golf | News</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="Ghala Golf Club">
+	<meta name="keywords" content="Ghala Golf | News Us">
+	<meta name="description" content="Ghala Golf | News Us">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+
+		<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		rel="stylesheet"
+		/>
+    <style>
+        .blog__item h2{
+            font-size: 28px;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    	<div class="preloader"></div>
+
+	<div class="nav nav-overlay">
+		<div class="nav__content">
+			<div class="container">
+				<div class="row p-4 p-md-0 flex-column-reverse flex-md-row g-md-5 nav__block">
+					<div class="col-md-4">
+						<ul class="nav__list d-md-block">
+							<li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
+							<li class="nav__list-item" ><a href="{% url 'about-us' %}" class="hover-target">About Us</a></li>
+							<li class="nav__list-item  active-nav"><a href="{% url 'news' %}" class="hover-target">News</a></li>
+							<li class="nav__list-item"><a href="{% url 'membership' %}" class="hover-target">Membershp</a></li>
+							<li class="nav__list-item "><a href="{% url 'golf-academy' %}" class="hover-target">Golf Academy</a></li>
+							<li class="nav__list-item"><a href="{% url 'calendar' %}" class="hover-target">Calendar</a></li>
+							<li class="nav__list-item "><a href="{% url 'gallery' %}" class="hover-target">Gallery</a></li>
+							<li class="nav__list-item"><a href="{% url 'sponsors' %}" class="hover-target">Sponsors</a></li>
+							<li class="nav__list-item"><a href="{% url 'member-lounge' %}" class="hover-target">Member Lounge</a></li>
+							<li class="nav__list-item"><a href="{% url 'contact-us' %}" class="hover-target">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<h3 class="text-white fw-bold nav__block-item">Unwind, Play, Connect</h3>
+						<p class="text-light nav__block-item">Rooted in history and inspired by nature, Ghala Golf Club is dedicated to providing an exceptional environment to unwind, challenge yourself, and connect with others.
+						</p>
+						
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<ul class="list-unstyled text-light nav__block-item">
+							<li class="menu-item">
+								<i class="icon icon-location me-2"></i>2Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+							</li>
+							<li class="menu-item ">
+								<i class="icon icon-phone me-2 "></i>
+								+968 9219 4957
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-envelope-o me-2"></i>
+								<a href="mailto:proshop@ghalagolf.com"
+									class="text-light">proshop@ghalagolf.com
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- <div class="col-md-3 text-white">
+						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
+						<ul class="list-unstyled nav__block-item">
+							<li><a href="index.html" class="text-white">Onepage </a></li>
+							<li><a href="index.html" class="text-white">Styles </a></li>
+							<li><a href="index.html" class="text-white">Blog </a></li>
+							<li><a href="index.html" class="text-white">Single Post </a></li>
+							<li><a href="index.html" class="text-white">Contact us </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
+							<li><a href="index.html" class="text-white">About Us </a></li>
+							<li><a href="index.html" class="text-white">Our Team </a></li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-logo">
+		<a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+	</div>
+
+	<div class="side-nav-bar">
+		<input id="menu-toggle" type="checkbox" />
+		<label class="menu-btn" for="menu-toggle">
+			<span></span>
+		</label>
+	</div>
+
+
+
+	<section id="intro" class="scrollspy-section">
+		<div class="main-slider">
+			<div class="slider-item jarallax d-flex align-items-center justify-content-center text-center" data-speed="0.2" style="height: 50vh; position: relative;">
+				
+				{% if news_header and news_header.image %}
+					<img src="{{ news_header.image.url }}" alt="{{ news_header.title }}" class="jarallax-img">
+				{% else %}
+					<img src="{% static 'images/news-header.jpg' %}" alt="banner" class="jarallax-img">
+				{% endif %}
+				
+				<div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.45);"></div>
+
+				<div class="container position-relative text-white">
+					<div class="col-lg-8 mx-auto news-header-title">
+						{% if news_header %}
+							<h1 class="mb-4 font-2">{{ news_header.title }}</h1>
+							<p>{{ news_header.content }}</p>
+						{% else %}
+							<h1 class="mb-4 font-2">Stay Tuned</h1>
+							<p>Be the first to hear what’s next</p>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+    <!-- Blog Section Begin -->
+   	<section class="blog spad">
+		<div class="container">
+			<div class="row">
+				<!-- Left: News list -->
+				<div class="col-lg-8">
+					<div class="blog__item__list">
+						{% for news in news_list %}
+						<div class="blog__item">
+							<ul>
+								<li>{{ news.publish_date|date:"F d, Y" }}</li>
+								<li>{{ news.author }}</li>
+								<li>{{ news.category }}</li>
+							</ul>
+							<h2>{{ news.title }}</h2>
+							{% if news.featured_image %}
+								<img src="{{ news.featured_image.url }}" alt="{{ news.title }}">
+							{% else %}
+								<img src="{% static 'images/hero.jpg' %}" alt="{{ news.title }}">
+							{% endif %}
+							<div class="blog__item__text">
+								<p>{{ news.content|truncatewords:30 }}</p>
+								<!-- <a href="{% url 'news_detail' news.id %}">Read more</a> -->
+							</div>
+							<div class="btn-wrap">
+								<a href="{% url 'news_detail' news.id %}" class="btn-with-line-black">Read More</a>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="blog__pagination">
+								{% if news_list.has_previous %}
+									<a href="?page={{ news_list.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+								{% else %}
+									<span class="disabled"><i class="fa fa-angle-left"></i></span>
+								{% endif %}
+
+								{% for num in news_list.paginator.page_range %}
+									{% if news_list.number == num %}
+										<span class="active" style="color: #daa556; font-weight: bold;">{{ num }}</span>
+									{% else %}
+										<a href="?page={{ num }}">{{ num }}</a>
+									{% endif %}
+								{% endfor %}
+
+								{% if news_list.has_next %}
+									<a href="?page={{ news_list.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+								{% else %}
+									<span class="disabled"><i class="fa fa-angle-right"></i></span>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+				<!-- Right: Latest News -->
+				<div class="col-lg-4">
+					<div class="blog__sidebar">
+						<div class="blog__sidebar__feature">
+							<h5>Latest News</h5>
+							{% for latest in latest_news %}
+							<a href="{% url 'news_detail' latest.id %}" class="blog__sidebar__feature__item">
+								<div class="blog__sidebar__feature__item__pic">
+									{% if latest.featured_image %}
+										<img src="{{ latest.featured_image.url }}" alt="{{ latest.title }}">
+									{% else %}
+										<img src="{% static 'images/hero.jpg' %}" alt="{{ latest.title }}">
+									{% endif %}
+								</div>
+								<div class="blog__sidebar__feature__item__text">
+									<span>{{ latest.publish_date|date:"F d, Y" }}</span>
+									<h6>{{ latest.title }}</h6>
+								</div>
+							</a>
+							{% endfor %}
+						</div>
+
+						<!-- <div class="blog__sidebar__tag">
+							<h5>Tag</h5>
+							<a href="#">Branding</a>
+							<a href="#">Office</a>
+							<a href="#">Creative</a>
+							<a href="#">Building</a>
+							<a href="#">Portfolio</a>
+							<a href="#">Products</a>
+							<a href="#">Website</a>
+							<a href="#">Design</a>
+							<a href="#">Working Space</a>
+						</div> -->
+						<div class="blog__sidebar__social">
+							<h5>Follow Us</h5>
+							
+							<a href="mailto:proshop@ghalagolf.com"><i class="icon icon-mail3"></i></a>
+							<a href="https://www.facebook.com/GhalaGolfClub/"><i class="icon icon-facebook"></i></a>
+							<a href="https://www.instagram.com/ghalagolfclub?igsh=MTl0eW5udzcyb2FsbA=="><i class="fab fa-instagram"></i></a>
+							<a href="https://www.linkedin.com/company/ghala-golf-club/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+						</div>
+						<!-- <div class="blog__sidebar__newslatter">
+							<h5>Newslatter</h5>
+							<form action="#">
+								<input type="text" placeholder="Your email address">
+								<button type="submit"><i class="fa fa-location-arrow"></i></button>
+							</form>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!-- Blog Section End -->
+
+
+
+  	
+
+
+
+	   
+
+
+
+
+	<footer id="footer">
+	
+		<div class="container">
+			
+			<div class="row">
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-01">
+						<img src="{% static 'images/logo.png' %}" alt="logo" class="footer-logo">
+						<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iste consequatur nulla iusto omnis aliquam alias at libero? Voluptates, minus!</p> -->
+						
+					</div>
+
+				</div>
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-02">
+						<h5>quick links</h5>
+						<ul class="menu-list">
+							<li class="menu-item">
+								<a href="{% url 'index' %}">home</a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'about-us' %}">about us </a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'membership' %}">membership</a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'calendar' %}">calendar</a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'news' %}">news</a>
+							</li>
+							
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-03">
+						<h5>contact info</h5>
+						<ul class="menu-list">
+							
+							<li class="menu-item">
+								<i class="icon icon-location2"></i>Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-phone"></i>+968 9219 4957
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-envelope-o"></i><a href="mailto:proshop@ghalagolf.com" class="mail-id">proshop@ghalagolf.com</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-04">
+						<h5>Follow Us</h5>
+						<div class="social-links">
+							<ul>
+								<li>
+									<a href="https://www.facebook.com/GhalaGolfClub/"><i class="icon icon-facebook"></i></a>
+								</li>
+							
+								<li>
+									<a href="https://www.instagram.com/ghalagolfclub?igsh=MTl0eW5udzcyb2FsbA=="><i class="fab fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/company/ghala-golf-club/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="copyright">
+						<p> All rights reserved.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="copyright text-right">
+						<p>© 2025 <a href="{% url 'index' %}"target="_blank">Ghala Golf Club.</a> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+	<script src="{% static 'js/ui-easing.js' %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

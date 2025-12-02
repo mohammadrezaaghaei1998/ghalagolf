@@ -1,0 +1,565 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<title>Ghala Golf | Golf Academy</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="Ghala Golf | Golf Academy">
+	<meta name="keywords" content="Ghala Golf | Golf Academy">
+	<meta name="description" content="Ghala Golf | Golf Academy">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/membership.css' %}">
+	<link rel="stylesheet" href="{% static 'css/golf_academy.css' %}">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+		
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+	
+
+		
+</head>
+
+<body>
+
+	<div class="preloader"></div>
+
+	<div class="nav nav-overlay">
+		<div class="nav__content">
+			<div class="container">
+				<div class="row p-4 p-md-0 flex-column-reverse flex-md-row g-md-5 nav__block">
+					<div class="col-md-4">
+						<ul class="nav__list d-md-block">
+							<li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
+							<li class="nav__list-item " ><a href="{% url 'about-us' %}" class="hover-target">About Us</a></li>
+							<li class="nav__list-item"><a href="{% url 'news' %}" class="hover-target">News</a></li>
+							<li class="nav__list-item"><a href="{% url 'membership' %}" class="hover-target">Membershp</a></li>
+							<li class="nav__list-item  active-nav"><a href="{% url 'golf-academy' %}" class="hover-target">Golf Academy</a></li>
+							<li class="nav__list-item"><a href="{% url 'calendar' %}" class="hover-target">Calendar</a></li>
+							<li class="nav__list-item  "><a href="{% url 'gallery' %}" class="hover-target">Gallery</a></li>
+							<li class="nav__list-item"><a href="{% url 'sponsors' %}" class="hover-target">Sponsors</a></li>
+							<li class="nav__list-item"><a href="{% url 'member-lounge' %}" class="hover-target">Member Lounge</a></li>
+							<li class="nav__list-item "><a href="{% url 'contact-us' %}" class="hover-target">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<h3 class="text-white fw-bold nav__block-item">Unwind, Play, Connect</h3>
+						<p class="text-light nav__block-item">Rooted in history and inspired by nature, Ghala Golf Club is dedicated to providing an exceptional environment to unwind, challenge yourself, and connect with others.
+						</p>
+						
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<ul class="list-unstyled text-light nav__block-item">
+							<li class="menu-item">
+								<i class="icon icon-location me-2"></i>2Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+							</li>
+							<li class="menu-item ">
+								<i class="icon icon-phone me-2 "></i>
+								+968 9219 4957
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-envelope-o me-2"></i>
+								<a href="mailto:proshop@ghalagolf.com"
+									class="text-light">proshop@ghalagolf.com
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- <div class="col-md-3 text-white">
+						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
+						<ul class="list-unstyled nav__block-item">
+							<li><a href="index.html" class="text-white">Onepage </a></li>
+							<li><a href="index.html" class="text-white">Styles </a></li>
+							<li><a href="index.html" class="text-white">Blog </a></li>
+							<li><a href="index.html" class="text-white">Single Post </a></li>
+							<li><a href="index.html" class="text-white">Contact us </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
+							<li><a href="index.html" class="text-white">About Us </a></li>
+							<li><a href="index.html" class="text-white">Our Team </a></li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-logo">
+		<a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+	</div>
+
+	<div class="side-nav-bar">
+		<input id="menu-toggle" type="checkbox" />
+		<label class="menu-btn" for="menu-toggle">
+			<span></span>
+		</label>
+	</div>
+
+ 
+
+	<section class="section-one">
+		<div class="container d-flex justify-content-end">
+			<div class="col-sm-12 col-md-12 col-lg-8  membership-form">
+				<div class="row">
+					<h2 class="m-0 p-0 mb-2">Golf Academy Inquiry Form</h2>
+                    <p class="form-subtitle text-center text-white p-0 m-0 mb-4">Get in touch to begin your training journey with our certified coaches.</p>
+
+					<form>
+						<div class="form-group">
+							<input type="text" class="form-control" id="fullName" placeholder=" " required>
+							<label for="fullName">Full Name</label>
+						</div>
+
+						<div class="form-group">
+							<input type="email" class="form-control" id="email" placeholder=" " required>
+							<label for="email">Email Address</label>
+						</div>
+
+						<div class="form-group">
+							<input type="tel" class="form-control" id="phone" placeholder=" " required>
+							<label for="phone">Phone Number</label>
+						</div>
+
+						<div class="form-group">
+							<select id="membershipType" class="form-select" required>
+							<option value="" disabled selected hidden></option>
+							<option>Individual</option>
+							<option>Family</option>
+							<option>Corporate</option>
+							<option>Junior</option>
+							<option>Seasonal</option>
+							</select>
+							<label for="membershipType">Membership Type</label>
+						</div>
+
+						<div class="form-group">
+							<textarea class="form-control" id="message" rows="3" placeholder=" "></textarea>
+							<label for="message">Additional Notes</label>
+						</div>
+
+						<div class="form-group">
+							<input type="number" class="form-control" id="handicap" placeholder=" ">
+							<label for="handicap">Golf Handicap (Optional)</label>
+						</div>
+
+						<div class="form-group">
+							<input type="date" class="form-control" id="dob" placeholder=" ">
+							<label for="dob">Date of Birth</label>
+						</div>
+
+						<button type="submit" class="btn btn-submit mt-3">Send Application</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	<section class="py-5">
+		<div class="container mt-5">
+			<div class="golf-academy-video position-relative overflow-hidden rounded-4">
+				
+				<img src="{% static 'images/course-top.jpg' %}" class="img-fluid w-100" alt="Ghala Golf Club Lounge" />
+
+				<div class="position-absolute top-0 start-0 w-100 h-100"
+					style="background: linear-gradient(90deg, rgba(0, 0, 0, 0.856) 0%, rgba(0, 0, 0, 0.411) 60%, transparent 100%);">
+				</div>
+
+				<div class="position-absolute top-50 start-0 translate-middle-y ms-5 text-white" style="max-width:350px;">
+					<h3 class="fw-semibold mb-3 text-white" style="font-size:24px;">
+							Step-by-Step Golf Training with Our Coach
+						</h3>
+					<div class="btn-wrap align-center col-3 mt-5">
+						<div class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal">
+							<i class="fa-solid fa-play"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<style>
+	.modal-content {
+  display: flex !important;
+  justify-content: center !;
+  padding: 1rem !important; /* add some padding if you want */
+}
+</style>
+
+	<!-- Video Modal -->
+	<div class="modal fade" id="videoModal" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content bg-dark p-0">
+
+				<div class="modal-header border-0">
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+
+				<div class="modal-body p-0 align-center" style="max-width: 400px !important;">
+					<video id="academyVideo" class="w-100 align-center" controls>
+					<source src="{% static 'videos/josh-interview.mp4' %}" type="video/mp4">
+					Your browser does not support the video tag.
+					</video>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- <div class="image-thumbnail-carousel">
+		<section class="image-display">
+			<div class="screen"></div>
+		</section>
+		<section class="thumbnail-carousel">
+			<button type="button" class="carousel__btn prev" aria-label="Previous slide">
+				<svg width="16" height="16" fill="currentColor" class="arrow-icon arrow-left-circle" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+				</svg>
+			</button>
+			<ul class="carousel__slider">
+				<li class="carousel__slide">
+					<div class="thumbnail">
+						<img loading="lazy" src="https://picsum.photos/800/450" alt="">
+					</div>
+				</li>
+				<li class="carousel__slide">
+					<div class="thumbnail">
+						<img loading="lazy" src="https://picsum.photos/800/452" alt="">
+					</div>
+				</li>
+				<li class="carousel__slide">
+					<div class="thumbnail">
+						<img loading="lazy" src="https://picsum.photos/800/453" alt="">
+					</div>
+				</li>
+				<li class="carousel__slide">
+					<div class="thumbnail">
+						<img loading="lazy" src="https://picsum.photos/800/454" alt="">
+					</div>
+				</li>
+				<li class="carousel__slide">
+					<div class="thumbnail">
+						<img loading="lazy" src="https://picsum.photos/800/455" alt="">
+					</div>
+				</li>
+				<li class="carousel__slide">
+					<div class="thumbnail">
+						<img loading="lazy" src="https://picsum.photos/800/456" alt="">
+					</div>
+				</li>
+				<li class="carousel__slide">
+					<div class="thumbnail">
+						<img loading="lazy" src="https://picsum.photos/800/457" alt="">
+					</div>
+				</li>
+				<li class="carousel__slide">
+					<div class="thumbnail">
+						<img loading="lazy" src="https://picsum.photos/800/458" alt="">
+					</div>
+				</li>
+				<li class="carousel__slide">
+					<div class="thumbnail">
+						<img loading="lazy" src="https://picsum.photos/800/459" alt="">
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="carousel__btn next" aria-label="Next slide">
+				<svg width="16" height="16" fill="currentColor" class="arrow-icon arrow-right-circle" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+				</svg>
+			</button>
+		</section>
+	</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<footer id="footer">
+		
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-01">
+							<img src="{% static 'images/logo.png' %}" alt="logo" class="footer-logo">
+							<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iste consequatur nulla iusto omnis aliquam alias at libero? Voluptates, minus!</p> -->
+							
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-02">
+							<h5>quick links</h5>
+							<ul class="menu-list">
+								<li class="menu-item">
+									<a href="{% url 'index' %}">home</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'about-us' %}">about us </a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'membership' %}">membership</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'calendar' %}">calendar</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'news' %}">news</a>
+								</li>
+								
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-03">
+							<h5>contact info</h5>
+							<ul class="menu-list">
+								
+								<li class="menu-item">
+									<i class="icon icon-location2"></i>Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+								</li>
+								<li class="menu-item">
+									<i class="icon icon-phone"></i>+968 9219 4957
+								</li>
+								<li class="menu-item">
+									<i class="icon icon-envelope-o"></i><a href="mailto:proshop@ghalagolf.com" class="mail-id">proshop@ghalagolf.com</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-04">
+							<h5>Follow Us</h5>
+							<div class="social-links">
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/GhalaGolfClub/"><i class="icon icon-facebook"></i></a>
+									</li>
+									
+									<li>
+										<a href="https://www.instagram.com/ghalagolfclub?igsh=MTl0eW5udzcyb2FsbA=="><i class="fab fa-instagram"></i></a>
+									</li>
+									<li>
+										<a href="https://www.linkedin.com/company/ghala-golf-club/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="copyright">
+						<p> All rights reserved.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="copyright text-right">
+						<p>© 2025 <a href="{% url 'index' %}"target="_blank">Ghala Golf Club.</a> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	
+	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+	<script src="{% static 'js/ui-easing.js' %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+		
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+	
+
+
+
+<script>
+    const videoModal = document.getElementById('videoModal');
+    const academyVideo = document.getElementById('academyVideo');
+
+    // Play video when modal opens
+    videoModal.addEventListener('shown.bs.modal', () => {
+        academyVideo.play();
+    });
+
+    // Pause + reset when modal closes
+    videoModal.addEventListener('hidden.bs.modal', () => {
+        academyVideo.pause();
+        academyVideo.currentTime = 0;
+    });
+</script>
+
+
+<script>
+	const Carousel = (() => {
+    const getActiveSlide = () =>
+        document.querySelector(".carousel__slide.active");
+    const getFirstSlide = () =>
+        document.querySelector(".carousel__slider").firstElementChild;
+    const getLastSlide = () =>
+        document.querySelector(".carousel__slider").lastElementChild;
+
+    const getSiblingSlide = (slide, direction) =>
+        direction === "prev"
+            ? slide.previousElementSibling
+            : slide.nextElementSibling;
+
+    const getNewActiveSlide = (key, activeSlide) => {
+        const actions = {
+            Home: getFirstSlide,
+            End: getLastSlide,
+            ArrowLeft: () => getSiblingSlide(activeSlide, "prev"),
+            ArrowRight: () => getSiblingSlide(activeSlide, "next")
+        };
+        return actions[key]?.() || null;
+    };
+
+    const updateScreen = (activeSlide) => {
+        const carouselScreen = document.querySelector(".image-display .screen");
+        const img = activeSlide.querySelector("img").cloneNode(true);
+        carouselScreen.innerHTML = "";
+        carouselScreen.appendChild(img);
+    };
+
+    const scrollToActiveSlide = (activeSlide) => {
+        const carouselSlider = document.querySelector(".carousel__slider");
+        const { offsetLeft, offsetWidth } = activeSlide;
+        const { clientWidth } = carouselSlider;
+
+        carouselSlider.scrollTo({
+            left: offsetLeft - clientWidth / 2 + offsetWidth / 2,
+            behavior: "smooth"
+        });
+    };
+
+    const updateActiveSlideClass = (activeSlide) => {
+        document
+            .querySelectorAll(".carousel__slide.active")
+            .forEach((slide) => slide.classList.remove("active"));
+        activeSlide.classList.add("active");
+    };
+
+    const updateCarousel = (activeSlide) => {
+        updateActiveSlideClass(activeSlide);
+        updateScreen(activeSlide);
+        scrollToActiveSlide(activeSlide);
+        updateButtonStates(activeSlide);
+    };
+
+    const updateButtonStates = (activeSlide) => {
+        const prevButton = document.querySelector(".carousel__btn.prev");
+        const nextButton = document.querySelector(".carousel__btn.next");
+
+        prevButton.disabled = !getSiblingSlide(activeSlide, "prev");
+        nextButton.disabled = !getSiblingSlide(activeSlide, "next");
+    };
+
+    const handleKeydown = (e) => {
+        if (!e.target.closest(".carousel__slider")) return;
+        const activeSlide = getActiveSlide();
+        const newActiveSlide = getNewActiveSlide(e.key, activeSlide);
+
+        if (newActiveSlide) {
+            e.preventDefault();
+            updateCarousel(newActiveSlide);
+        }
+    };
+
+    const handleButtonClick = (e) => {
+        const activeSlide = getActiveSlide();
+        const newActiveSlide = getSiblingSlide(
+            activeSlide,
+            e.currentTarget.classList.contains("prev") ? "prev" : "next"
+        );
+
+        if (newActiveSlide) {
+            updateCarousel(newActiveSlide);
+        }
+    };
+
+    const handleCarouselClick = (e) => {
+        const clickedSlide = e.target.closest(".carousel__slide");
+        if (clickedSlide) {
+            updateCarousel(clickedSlide);
+        }
+    };
+
+    const initCarousel = () => {
+        const carouselSlider = document.querySelector(".carousel__slider");
+        const prevButton = document.querySelector(".carousel__btn.prev");
+        const nextButton = document.querySelector(".carousel__btn.next");
+
+        updateCarousel(getFirstSlide());
+
+        document.addEventListener("keydown", handleKeydown);
+        prevButton.addEventListener("click", handleButtonClick);
+        nextButton.addEventListener("click", handleButtonClick);
+        carouselSlider.addEventListener("click", handleCarouselClick);
+    };
+
+    initCarousel();
+})();
+
+</script>
+</body>
+
+</html>

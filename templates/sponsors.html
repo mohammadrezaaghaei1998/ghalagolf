@@ -1,0 +1,486 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<title>Ghala Golf | Sponsors</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="Ghala Golf | Sponsors">
+	<meta name="keywords" content="Ghala Golf | Sponsors">
+	<meta name="description" content="Ghala Golf | Sponsors">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sponsors.css' %}">
+	 <link rel="stylesheet" href="{% static 'css/sponsorship-form.css' %}">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+
+
+
+		<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		rel="stylesheet"
+		/>
+</head>
+
+<body>
+
+	<div class="preloader"></div>
+
+	<div class="nav nav-overlay">
+		<div class="nav__content">
+			<div class="container">
+				<div class="row p-4 p-md-0 flex-column-reverse flex-md-row g-md-5 nav__block">
+					<div class="col-md-4">
+						<ul class="nav__list d-md-block">
+							<li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
+							<li class="nav__list-item" ><a href="{% url 'about-us' %}" class="hover-target">About Us</a></li>
+							<li class="nav__list-item "><a href="{% url 'news' %}" class="hover-target">News</a></li>
+							<li class="nav__list-item"><a href="{% url 'membership' %}" class="hover-target">Membershp</a></li>
+							<li class="nav__list-item "><a href="{% url 'golf-academy' %}" class="hover-target">Golf Academy</a></li>
+							<li class="nav__list-item"><a href="{% url 'calendar' %}" class="hover-target">Calendar</a></li>
+							<li class="nav__list-item "><a href="{% url 'gallery' %}" class="hover-target">Gallery</a></li>
+							<li class="nav__list-item  active-nav"><a href="{% url 'sponsors' %}" class="hover-target">Sponsors</a></li>
+							<li class="nav__list-item"><a href="{% url 'member-lounge' %}" class="hover-target">Member Lounge</a></li>
+							<li class="nav__list-item"><a href="{% url 'contact-us' %}" class="hover-target">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<h3 class="text-white fw-bold nav__block-item">Unwind, Play, Connect</h3>
+						<p class="text-light nav__block-item">Rooted in history and inspired by nature, Ghala Golf Club is dedicated to providing an exceptional environment to unwind, challenge yourself, and connect with others.
+						</p>
+						
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<ul class="list-unstyled text-light nav__block-item">
+							<li class="menu-item">
+								<i class="icon icon-location me-2"></i>2Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+							</li>
+							<li class="menu-item ">
+								<i class="icon icon-phone me-2 "></i>
+								+968 9219 4957
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-envelope-o me-2"></i>
+								<a href="mailto:proshop@ghalagolf.com"
+									class="text-light">proshop@ghalagolf.com
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- <div class="col-md-3 text-white">
+						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
+						<ul class="list-unstyled nav__block-item">
+							<li><a href="index.html" class="text-white">Onepage </a></li>
+							<li><a href="index.html" class="text-white">Styles </a></li>
+							<li><a href="index.html" class="text-white">Blog </a></li>
+							<li><a href="index.html" class="text-white">Single Post </a></li>
+							<li><a href="index.html" class="text-white">Contact us </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
+							<li><a href="index.html" class="text-white">About Us </a></li>
+							<li><a href="index.html" class="text-white">Our Team </a></li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-logo">
+		<a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+	</div>
+
+	<div class="side-nav-bar">
+		<input id="menu-toggle" type="checkbox" />
+		<label class="menu-btn" for="menu-toggle">
+			<span></span>
+		</label>
+	</div>
+
+
+
+
+
+
+	<section id="intro" class="scrollspy-section">
+		<div class="main-slider">
+			<div class="slider-item jarallax d-flex align-items-center justify-content-center text-center"
+				data-speed="0.2" style="height: 50vh; position: relative;">
+
+				<img src="{{ header.background_image.url }}" alt="banner" class="jarallax-img">
+
+				<div class="position-absolute top-0 start-0 w-100 h-100"
+					style="background: rgba(0, 0, 0, 0.45);"></div>
+
+				<div class="container position-relative text-white">
+					<div class="col-lg-8 mx-auto sponsors-header">
+						<h1 class="mb-4 font-2">{{ header.title }}</h1>
+						<p>{{ header.subtitle }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+	<section id="testimonial" class="padding-large">
+		<div class="container">
+			<div class="row p-4">
+
+				<div class="col-md-6">
+
+					<div class="testimonial-block mt-0">
+						<div class="section-header">
+							<div class="title">
+								<span>{{ partnership.small_title }}</span>
+							</div>
+							<h2 class="section-title">{{ partnership.main_title }}</h2>
+						</div>
+
+						<div class="testimonials-inner">
+							<q>{{ partnership.description }}</q>
+
+							<div class="btn-wrap">
+								<a href="{% url 'about-us' %}" class="btn-with-line-black">Read More</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+					<figure class="jarallax-keep-img testimonial-image m-0" data-speed="0.5">
+						<img src="{{ partnership.image.url }}" alt="review" class="jarallax-img">
+					</figure>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<div class="container ">
+		<div class="section ">
+			<section class="partner-section p-4">
+				<div class="title-row mt-3">
+					<h5 class="section-title ">Strategic Partners</h5>
+					<div class="title-rule" aria-hidden="true"></div>
+				</div>
+
+				<p>Our team will help you implement, extend, support and upgrade applications from end to end—all with the goal of delivering an experience that leaves a lasting, transformational impact.</p>
+
+				 <div class="row text-center mt-2">
+					{% for partner in partners %}
+					<div class="col-md-2 partner-card">
+						<img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+						<div>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#{{ partner.partner_id }}">
+								Learn more →
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</section>
+		</div>
+
+
+		<div class="section">
+			<section class="partner-section p-4">
+				<div class="title-row mt-2">
+					<h5 class="section-title ">Business Application Partners</h5>
+					<div class="title-rule" aria-hidden="true"></div>
+				</div>
+
+				<p>Leverage our partnerships below to tailor high quality, cost-effective software solutions that seamlessly integrate with or enhance your existing systems, all without the need for extensive customization.</p>
+
+				<div class="container d-flex justify-content-end">
+					<div class="col-sm-12 col-md-12 col-lg-12  membership-form">
+						<div class="row">
+							<h2>Partnership Form</h2>
+							<form method="POST" action="{% url 'sponsors' %}" novalidate>
+								{% csrf_token %}
+								
+								<div class="form-group">
+									<input type="text" class="form-control" id="fullName" name="full_name" placeholder=" " required>
+									<label for="fullName">Full Name</label>
+								</div>
+								
+								<div class="form-group">
+									<input type="text" class="form-control" id="companyName" name="company_name" placeholder=" " required>
+									<label for="companyName">Company Name</label>
+								</div>
+								
+								<div class="form-group">
+									<input type="text" class="form-control" id="crNumber" name="cr_number" placeholder=" " required>
+									<label for="crNumber">CR No (Registration Number)</label>
+								</div>
+								
+								<div class="form-group">
+									<input type="email" class="form-control" id="emailAddress" name="email" placeholder=" " required>
+									<label for="emailAddress">Email Address</label>
+								</div>
+								
+								<div class="form-group">
+									<input type="tel" class="form-control" id="phoneNumber" name="phone" placeholder=" " required>
+									<label for="phoneNumber">Phone Number</label>
+								</div>
+								
+								<div class="form-group">
+									<textarea class="form-control" id="additionalNotes" name="additional_notes" rows="3" placeholder=" "></textarea>
+									<label for="additionalNotes">Additional Notes</label>
+								</div>
+								
+								<button type="submit" class="btn btn-submit mt-3">Send Application</button>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+	</div>
+
+
+
+
+
+	{% for partner in partners %}
+		<div class="modal fade" id="{{ partner.partner_id }}" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg-custom">
+
+				<div class="modal-content bg-dark-custom text-white">
+					<div class="modal-header d-flex align-items-center justify-content-between">
+
+						<div class="d-flex align-items-center gap-3 text-dark">
+							<img src="{{ partner.logo.url }}" class="img-fluid" alt="{{ partner.name }}" style="width: 70px;">
+							|
+							<h5 class="modal-title mb-0 text-white">{{ partner.name }}</h5>
+						</div>
+
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+					</div>
+
+					<div class="modal-body">
+						<p class="text-dark">{{ partner.description }}</p>
+
+						{% if partner.website %}
+						<a href="{{ partner.website }}" target="_blank" class="btn btn-primary">
+							Visit Website
+						</a>
+						{% endif %}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        .section-title{
+            font-size: 20px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+ 	<footer id="footer">
+		
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-01">
+							<img src="{% static 'images/logo.png' %}" alt="logo" class="footer-logo">
+							<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iste consequatur nulla iusto omnis aliquam alias at libero? Voluptates, minus!</p> -->
+							
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-02">
+							<h5>quick links</h5>
+							<ul class="menu-list">
+								<li class="menu-item">
+									<a href="{% url 'index' %}">home</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'about-us' %}">about us </a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'membership' %}">membership</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'calendar' %}">calendar</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'news' %}">news</a>
+								</li>
+								
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-03">
+							<h5>contact info</h5>
+							<ul class="menu-list">
+								
+								<li class="menu-item">
+									<i class="icon icon-location2"></i>Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+								</li>
+								<li class="menu-item">
+									<i class="icon icon-phone"></i>+968 9219 4957
+								</li>
+								<li class="menu-item">
+									<i class="icon icon-envelope-o"></i><a href="mailto:proshop@ghalagolf.com" class="mail-id">proshop@ghalagolf.com</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-04">
+							<h5>Follow Us</h5>
+							<div class="social-links">
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/GhalaGolfClub/"><i class="icon icon-facebook"></i></a>
+									</li>
+									
+									<li>
+										<a href="https://www.instagram.com/ghalagolfclub?igsh=MTl0eW5udzcyb2FsbA=="><i class="fab fa-instagram"></i></a>
+									</li>
+									<li>
+										<a href="https://www.linkedin.com/company/ghala-golf-club/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="copyright">
+						<p> All rights reserved.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="copyright text-right">
+						<p>© 2025 <a href="{% url 'index' %}"target="_blank">Ghala Golf Club.</a> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+	<script src="{% static 'js/ui-easing.js' %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+
+
+
+
+
+
+
+<script>
+    {% if messages %}
+        {% for message in messages %}
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "timeOut": "5000"
+            };
+
+            {% if message.tags == "success" %}
+                toastr.success("{{ message }}");
+            {% elif message.tags == "error" %}
+                toastr.error("{{ message }}");
+            {% else %}
+                toastr.info("{{ message }}");
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</script>
+
+
+
+
+</body>
+
+</html>

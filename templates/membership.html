@@ -1,0 +1,525 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<title>Ghala Golf | Membership</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="Ghala Golf | Membership">
+	<meta name="keywords" content="Ghala Golf | Membership">
+	<meta name="description" content="Ghala Golf | Membership">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/membership.css' %}">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+	<div class="preloader"></div>
+
+	<div class="nav nav-overlay">
+		<div class="nav__content">
+			<div class="container">
+				<div class="row p-4 p-md-0 flex-column-reverse flex-md-row g-md-5 nav__block">
+					<div class="col-md-4">
+						<ul class="nav__list d-md-block">
+							<li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
+							<li class="nav__list-item " ><a href="{% url 'about-us' %}" class="hover-target">About Us</a></li>
+							<li class="nav__list-item"><a href="{% url 'news' %}" class="hover-target">News</a></li>
+							<li class="nav__list-item  active-nav"><a href="{% url 'membership' %}" class="hover-target">Membershp</a></li>
+							<li class="nav__list-item "><a href="{% url 'golf-academy' %}" class="hover-target">Golf Academy</a></li>
+							<li class="nav__list-item"><a href="{% url 'calendar' %}" class="hover-target">Calendar</a></li>
+							<li class="nav__list-item  "><a href="{% url 'gallery' %}" class="hover-target">Gallery</a></li>
+							<li class="nav__list-item"><a href="{% url 'sponsors' %}" class="hover-target">Sponsors</a></li>
+							<li class="nav__list-item"><a href="{% url 'member-lounge' %}" class="hover-target">Member Lounge</a></li>
+							<li class="nav__list-item "><a href="{% url 'contact-us' %}" class="hover-target">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<h3 class="text-white fw-bold nav__block-item">Unwind, Play, Connect</h3>
+						<p class="text-light nav__block-item">Rooted in history and inspired by nature, Ghala Golf Club is dedicated to providing an exceptional environment to unwind, challenge yourself, and connect with others.
+						</p>
+						
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<ul class="list-unstyled text-light nav__block-item">
+							<li class="menu-item">
+								<i class="icon icon-location me-2"></i>2Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+							</li>
+							<li class="menu-item ">
+								<i class="icon icon-phone me-2 "></i>
+								+968 9219 4957
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-envelope-o me-2"></i>
+								<a href="mailto:proshop@ghalagolf.com"
+									class="text-light">proshop@ghalagolf.com
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- <div class="col-md-3 text-white">
+						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
+						<ul class="list-unstyled nav__block-item">
+							<li><a href="index.html" class="text-white">Onepage </a></li>
+							<li><a href="index.html" class="text-white">Styles </a></li>
+							<li><a href="index.html" class="text-white">Blog </a></li>
+							<li><a href="index.html" class="text-white">Single Post </a></li>
+							<li><a href="index.html" class="text-white">Contact us </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
+							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
+							<li><a href="index.html" class="text-white">About Us </a></li>
+							<li><a href="index.html" class="text-white">Our Team </a></li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-logo">
+		<a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+	</div>
+
+	<div class="side-nav-bar">
+		<input id="menu-toggle" type="checkbox" />
+		<label class="menu-btn" for="menu-toggle">
+			<span></span>
+		</label>
+	</div>
+
+
+
+	<section id="intro" class="scrollspy-section">
+		<div class="main-slider">
+			<div class="slider-item jarallax d-flex align-items-center justify-content-center text-center" data-speed="0.2" style="height: 50vh; position: relative;">
+
+			{% if membership_header and membership_header.image %}
+				<img src="{{ membership_header.image.url }}" alt="{{ membership_header.title }}" class="jarallax-img">
+			{% else %}
+				<img src="{% static 'images/membership.jpg' %}" alt="banner" class="jarallax-img">
+			{% endif %}
+
+			<div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.45);"></div>
+
+			<div class="container position-relative text-white">
+				<div class="col-lg-8 mx-auto membership-title-header">
+				{% if membership_header %}
+					<h1 class="mb-4 font-2">{{ membership_header.title }}</h1>
+					<p>{{ membership_header.subtitle }}</p>
+				{% else %}
+					<h1 class="mb-4 font-2">Get Out & Play</h1>
+					<p>Explore membership benefits, fees, and all the amenities awaiting you</p>
+				{% endif %}
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+
+
+	<style>
+		.aminities_svg{
+			filter: invert(77%) sepia(23%) saturate(276%) hue-rotate(18deg) brightness(95%) contrast(88%);
+		}
+		.aminities span{
+			color: black !important;
+		}
+
+		td{
+			background-color: var(--grey-color) !important;
+		}
+		tr strong{
+			font-size: 13px !important;
+		}
+
+		.table-title h4{
+			color: #ffffff !important;
+			font-family: 'poppins' , Arial , sans-serif !important;
+			font-weight: 200 !important;
+			letter-spacing: 2px;
+		}
+
+		.tr-main{
+			border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+		}
+
+		
+
+	</style>
+
+
+	<section>
+		<div class="container mb-5 mt-5 pt-5">
+			<div class="row">
+				<div class="col">
+					<div class="section-header">
+						<div class="title">
+							<span>Amenities designed around you</span>
+						</div>
+						<h2 class="section-title mb-0">Beyond Expectations</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row pt-0 p-4 mb-4">
+				<div class="col-8">
+				<!-- <p>Whether playing our 18-hole championship course or our 9-hole course, we have plenty of options when it comes to green fees with weekend and weekday as well as summer and winter rates available.</p> -->
+					<p>{{ section.description }}</p>
+				</div>
+			</div>
+	
+<!-- 
+			<div class="row mb-4 ">
+				<div class="col-12">
+					<h5 class="fw-bold mb-3">Practice Area</h5>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/putting-green.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Putting green</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/chipping-green.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Chipping green</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/pitching-green.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Pitching green</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/bunker-practice.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Bunker practice</span>
+				</div>
+			</div>
+
+
+			<div class="row mb-4">
+				<div class="col-12">
+					<h5 class="fw-bold mb-3">On Site</h5>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/pro-shop.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Pro Shop</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/rental-club.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Rental clubs</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/caddies.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Caddies</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/push-cart.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Push carts</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/push-cart.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Electro trolley</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/locker-room.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Locker rooms</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/parking.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Parking</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/wifi.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Wi-Fi in clubhouse</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/credit-card.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Credit cards accepted</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/golf-cart.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Golf carts</span>
+				</div>
+			</div>
+
+
+			<div class="row mb-4">
+				<div class="col-12">
+					<h5 class="fw-bold mb-3">Driving Range</h5>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/ball-grass.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Grass</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/ball-tee.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Mats</span>
+				</div>
+
+				<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+					<img src="{% static 'images/svg/ball-covered.svg' %}" class="me-2 aminities_svg" width="30" alt="">
+					<span>Covered area</span>
+				</div>
+			</div> -->
+
+
+				
+			{% for category in categories %}
+				<div class="row mb-4">
+					<div class="col-12">
+						<h5 class="fw-bold mb-3">{{ category.name }}</h5>
+					</div>
+
+					{% for amenity in category.amenities.all %}
+						<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+							{% if amenity.image %}
+								<img src="{{ amenity.image.url }}" class="me-2 aminities_svg" width="30" alt="{{ amenity.name }}">
+							{% else %}
+								<img src="{% static 'images/default-amenity.svg' %}" class="me-2 aminities_svg" width="30" alt="{{ amenity.name }}">
+							{% endif %}
+							<span>{{ amenity.name }}</span>
+						</div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+
+		</div>
+	</section>
+
+
+
+
+	<section class="py-5" style="background-color: var(--grey-color);">
+		<div class="container">
+
+			<!-- <h2 class="text-center mb-4 fw-bold text-dark">
+				Membership Plans & Fees
+			</h2> -->
+			<div class="container mb-5 mt-5 pt-5">
+			<div class="row">
+				<div class="col">
+					<div class="section-header">
+						<!-- <div class="title">
+							<span>Amenities designed around you</span>
+						</div> -->
+						<h2 class="section-title mb-0">Membership Plans & Fees</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+
+					<div class="table-responsive">
+						<table class="table table-borderless align-middle rate-table">
+							<thead>
+								<tr>
+									<th style="background-color: #C5A992 !important;" class="text-start table-title ps-4 pt-4 pb-4"><h4>Description</h4></th>
+									<th style="background-color: #C5A992 !important;" class="text-center table-title pt-4 pb-4"><h4>Duration</h4></th>
+									<th style="background-color: #C5A992 !important;" class="text-center table-title pt-4 pb-4"><h4 class="pr-5">Fee + VAT</h4></th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for fee in golf_fees %}
+									<tr class="tr-main">
+										<td><h4 class="ps-4 p-2"><strong>{{ fee.description }}</strong></h4></td>
+										<td class="text-center">{{ fee.duration }}</td>
+										<td class="text-center">{{ fee.fee }} OMR</td>
+									</tr>
+									<tr class="table-divider"><td colspan="3"></td></tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<div class="btn-wrap col-3">
+								<a href="{% url 'golf-academy' %}" 
+									class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center" 
+									style="border-radius: 0 !important; min-width: 280px !important;">
+									<span>Become A Member</span>
+									<i class="fas fa-arrow-right"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<footer id="footer">
+		
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-01">
+							<img src="{% static 'images/logo.png' %}" alt="logo" class="footer-logo">
+							<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iste consequatur nulla iusto omnis aliquam alias at libero? Voluptates, minus!</p> -->
+							
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-02">
+							<h5>quick links</h5>
+							<ul class="menu-list">
+								<li class="menu-item">
+									<a href="{% url 'index' %}">home</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'about-us' %}">about us </a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'membership' %}">membership</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'calendar' %}">calendar</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'news' %}">news</a>
+								</li>
+								
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-03">
+							<h5>contact info</h5>
+							<ul class="menu-list">
+								
+								<li class="menu-item">
+									<i class="icon icon-location2"></i>Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+								</li>
+								<li class="menu-item">
+									<i class="icon icon-phone"></i>+968 9219 4957
+								</li>
+								<li class="menu-item">
+									<i class="icon icon-envelope-o"></i><a href="mailto:proshop@ghalagolf.com" class="mail-id">proshop@ghalagolf.com</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-04">
+							<h5>Follow Us</h5>
+							<div class="social-links">
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/GhalaGolfClub/"><i class="icon icon-facebook"></i></a>
+									</li>
+									
+									<li>
+										<a href="https://www.instagram.com/ghalagolfclub?igsh=MTl0eW5udzcyb2FsbA=="><i class="fab fa-instagram"></i></a>
+									</li>
+									<li>
+										<a href="https://www.linkedin.com/company/ghala-golf-club/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="copyright">
+						<p> All rights reserved.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="copyright text-right">
+						<p>© 2025 <a href="{% url 'index' %}"target="_blank">Ghala Golf Club.</a> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+	<script src="{% static 'js/ui-easing.js' %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
