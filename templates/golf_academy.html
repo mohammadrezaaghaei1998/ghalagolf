@@ -180,53 +180,47 @@
 
 
 
-	<section class="py-5">
-		<div class="container mt-5">
+	<section class="py-5 mb-5">
+		<div class="container mt-5 mb-5">
 			<div class="golf-academy-video position-relative overflow-hidden rounded-4">
-				
-				<img src="{% static 'images/course-top.jpg' %}" class="img-fluid w-100" alt="Ghala Golf Club Lounge" />
+			
+			<img src="{{ content.thumbnail_image.url }}" class="img-fluid w-100" alt="{{ content.title }}" />
 
-				<div class="position-absolute top-0 start-0 w-100 h-100"
-					style="background: linear-gradient(90deg, rgba(0, 0, 0, 0.856) 0%, rgba(0, 0, 0, 0.411) 60%, transparent 100%);">
-				</div>
 
-				<div class="position-absolute top-50 start-0 translate-middle-y ms-5 text-white" style="max-width:350px;">
-					<h3 class="fw-semibold mb-3 text-white" style="font-size:24px;">
-							Step-by-Step Golf Training with Our Coach
-						</h3>
-					<div class="btn-wrap align-center col-3 mt-5">
-						<div class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal">
-							<i class="fa-solid fa-play"></i>
-						</div>
-					</div>
+			<div class="position-absolute top-0 start-0 w-100 h-100"
+				style="background: linear-gradient(90deg, rgba(0, 0, 0, 0.856) 0%, rgba(0, 0, 0, 0.411) 60%, transparent 100%);">
+			</div>
+
+			<div class="position-absolute top-50 start-0 translate-middle-y ms-5 text-white" style="max-width:350px;">
+				<h3 class="fw-semibold mb-3 text-white" style="font-size:24px;">
+				{{ content.title }}
+				</h3>
+			
+				<div class="btn-wrap align-center col-3 mt-5">
+				<div class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal">
+					<i class="fa-solid fa-play"></i>
 				</div>
+				</div>
+			</div>
 			</div>
 		</div>
 	</section>
-
-	<style>
-		.modal-content {
-			display: flex !important;
-			justify-content: center !;
-			padding: 1rem !important; /* add some padding if you want */
-		}
-	</style>
 
 	<!-- Video Modal -->
 	<div class="modal fade" id="videoModal" tabindex="-1">
 		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<div class="modal-content bg-dark p-0">
 
-				<div class="modal-header border-0">
-					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
+			<div class="modal-header border-0">
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
 
-				<div class="modal-body p-0 align-center" style="max-width: 400px !important;">
-					<video id="academyVideo" class="w-100 align-center" controls>
-					<source src="{% static 'videos/josh-interview.mp4' %}" type="video/mp4">
-					Your browser does not support the video tag.
-					</video>
-				</div>
+			<div class="modal-body p-0 align-center" style="max-width: 400px !important;">
+				<video id="academyVideo" class="w-100 align-center" controls>
+				<source src="{{ content.video_file.url }}" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+			</div>
 
 			</div>
 		</div>
@@ -235,76 +229,114 @@
 
 
 
+	<!-- <div class="container py-5 mt-5">
+		<div class="row ">
+			
+			<div class="col-lg-7 mb-4">
+				<div class="main-image-wrapper">
+					<img id="mainBg" class="main-bg" />
+					<img id="mainDisplay" src="{% static 'images/players/1.jpg' %}" class="main-image" alt="Large Preview">
+				</div>
 
-	<!-- <div class="image-thumbnail-carousel">
-		<section class="image-display">
-			<div class="screen"></div>
-		</section>
-		<section class="thumbnail-carousel">
-			<button type="button" class="carousel__btn prev" aria-label="Previous slide">
-				<svg width="16" height="16" fill="currentColor" class="arrow-icon arrow-left-circle" viewBox="0 0 16 16">
-					<path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
-				</svg>
-			</button>
-			<ul class="carousel__slider">
-				<li class="carousel__slide">
-					<div class="thumbnail">
-						<img loading="lazy" src="https://picsum.photos/800/450" alt="">
-					</div>
-				</li>
-				<li class="carousel__slide">
-					<div class="thumbnail">
-						<img loading="lazy" src="https://picsum.photos/800/452" alt="">
-					</div>
-				</li>
-				<li class="carousel__slide">
-					<div class="thumbnail">
-						<img loading="lazy" src="https://picsum.photos/800/453" alt="">
-					</div>
-				</li>
-				<li class="carousel__slide">
-					<div class="thumbnail">
-						<img loading="lazy" src="https://picsum.photos/800/454" alt="">
-					</div>
-				</li>
-				<li class="carousel__slide">
-					<div class="thumbnail">
-						<img loading="lazy" src="https://picsum.photos/800/455" alt="">
-					</div>
-				</li>
-				<li class="carousel__slide">
-					<div class="thumbnail">
-						<img loading="lazy" src="https://picsum.photos/800/456" alt="">
-					</div>
-				</li>
-				<li class="carousel__slide">
-					<div class="thumbnail">
-						<img loading="lazy" src="https://picsum.photos/800/457" alt="">
-					</div>
-				</li>
-				<li class="carousel__slide">
-					<div class="thumbnail">
-						<img loading="lazy" src="https://picsum.photos/800/458" alt="">
-					</div>
-				</li>
-				<li class="carousel__slide">
-					<div class="thumbnail">
-						<img loading="lazy" src="https://picsum.photos/800/459" alt="">
-					</div>
-				</li>
-			</ul>
-			<button type="button" class="carousel__btn next" aria-label="Next slide">
-				<svg width="16" height="16" fill="currentColor" class="arrow-icon arrow-right-circle" viewBox="0 0 16 16">
-					<path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
-				</svg>
-			</button>
-		</section>
+
+				<div class="slick-slider">
+					<div class="element element-1"><img src="{% static 'images/players/2.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+					<div class="element element-2"><img src="{% static 'images/players/3.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+					<div class="element element-3"><img src="{% static 'images/players/4.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+					<div class="element element-4"><img src="{% static 'images/players/5.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+					<div class="element element-5"><img src="{% static 'images/players/6.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+					<div class="element element-6"><img src="{% static 'images/players/7.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+					<div class="element element-7"><img src="{% static 'images/players/8.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+					<div class="element element-8"><img src="{% static 'images/players/9.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+					<div class="element element-9"><img src="{% static 'images/players/10.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+					<div class="element element-10"><img src="{% static 'images/players/11.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
+				</div>
+				<div class="slick-controls text-center mt-3">
+					<button class="slick-prev-custom btn btn-light me-3">Prev</button>
+					<button class="slick-next-custom btn btn-light">Next</button>
+				</div>
+			</div>
+
+			<div class="col-lg-5 ">
+
+				<div>
+					<h1 class="fw-bold display-5">LOREM ISPUM<br>WILL GO<br>HERE.</h1>
+					<p class="mt-4">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus est dolorem distinctio enim iure numquam eius quidem asperiores a odit!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reiciendis eligendi deserunt 
+						dignissimos sit nam nisi qui.aceat illum dignissimos alias natus
+						 ea laudantium possimus assumenda! Numquam,
+						  labore quibusdam?
+					</p>
+				</div>
+
+				<div class=" mb-4">
+					<a href="{% url 'news' %}" 
+						class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center"
+						style="border-radius: 0 !important; min-width: 280px !important;">
+						<span> EXPLORE MORE </span>
+						<i class="fas fa-arrow-right"></i>
+					</a>
+				</div>
+
+			</div>		
+		</div>
 	</div> -->
 
+	<section class="bg-light">
+		<div class="container py-5 mt-5">
+			<div class="row">
+				<div class="col-lg-7 mb-4">
+					<div class="main-image-wrapper">
+						<img id="mainBg" class="main-bg" />
+						
+						{% if gallery.first.image_main %}
+							<img id="mainDisplay" src="{{ gallery.first.image_main.url }}" class="main-image" alt="Large Preview">
+						{% else %}
+							<img id="mainDisplay" src="{% static 'images/default_image.jpg' %}" class="main-image" alt="Large Preview">
+						{% endif %}
+					</div>
 
+					<div class="slick-slider">
+						{% for gallery_item in gallery %}
+							<div class="element">
+								<img src="{{ gallery_item.image.url }}" class="thumb-img" 
+									onclick="changeImage('{% if gallery_item.image_main %}{{ gallery_item.image_main.url }}{% else %}{% static 'images/default_image.jpg' %}{% endif %}')">
+							</div>
+						{% endfor %}
+					</div>
 
+					<div class="slick-controls text-center mt-3">
+						<button class="slick-prev-custom btn btn-light me-3">Prev</button>
+						<button class="slick-next-custom btn btn-light">Next</button>
+					</div>
+				</div>
 
+				<div class="col-lg-5">
+					<div>
+						{% if content %}
+							<h1 class="fw-bold display-5">{{ gallery_description.title|linebreaksbr }}</h1>
+							<p class="mt-4">{{ gallery_description.description }}</p>
+						{% else %}
+							<h1 class="fw-bold display-5">LOREM ISPUM<br>WILL GO<br>HERE.</h1>
+							<p class="mt-4">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus est dolorem distinctio enim iure numquam eius quidem asperiores a odit!
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reiciendis eligendi deserunt dignissimos sit nam nisi qui.
+							</p>
+						{% endif %}
+					</div>
 
+					<div class="mb-4">
+						<a href="{% url 'news' %}" class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center" style="border-radius: 0 !important; min-width: 280px !important;">
+							<span>EXPLORE MORE</span>
+							<i class="fas fa-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
 
 
 
@@ -437,136 +469,61 @@
 	<script src="{% static 'js/script.js' %}"></script>
 	
 
+	<script>
+		$('.slick-slider').slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			infinite: false,
+			arrows: true,
+			prevArrow: $('.slick-prev-custom'),
+			nextArrow: $('.slick-next-custom')
+		});
+	</script>
 
 
-<script>
-    const videoModal = document.getElementById('videoModal');
-    const academyVideo = document.getElementById('academyVideo');
 
-    // Play video when modal opens
-    videoModal.addEventListener('shown.bs.modal', () => {
-        academyVideo.play();
-    });
+	<script>
+		const videoModal = document.getElementById('videoModal');
+		const academyVideo = document.getElementById('academyVideo');
 
-    // Pause + reset when modal closes
-    videoModal.addEventListener('hidden.bs.modal', () => {
-        academyVideo.pause();
-        academyVideo.currentTime = 0;
-    });
-</script>
+		videoModal.addEventListener('shown.bs.modal', () => {
+			academyVideo.play();
+		});
+
+		videoModal.addEventListener('hidden.bs.modal', () => {
+			academyVideo.pause();
+			academyVideo.currentTime = 0;
+		});
+	</script>
 
 
-<script>
-	const Carousel = (() => {
-    const getActiveSlide = () =>
-        document.querySelector(".carousel__slide.active");
-    const getFirstSlide = () =>
-        document.querySelector(".carousel__slider").firstElementChild;
-    const getLastSlide = () =>
-        document.querySelector(".carousel__slider").lastElementChild;
 
-    const getSiblingSlide = (slide, direction) =>
-        direction === "prev"
-            ? slide.previousElementSibling
-            : slide.nextElementSibling;
 
-    const getNewActiveSlide = (key, activeSlide) => {
-        const actions = {
-            Home: getFirstSlide,
-            End: getLastSlide,
-            ArrowLeft: () => getSiblingSlide(activeSlide, "prev"),
-            ArrowRight: () => getSiblingSlide(activeSlide, "next")
-        };
-        return actions[key]?.() || null;
-    };
+	<script>
+		function changeImage(src) {
+			const main = document.getElementById("mainDisplay");
+			const bg = document.getElementById("mainBg");
 
-    const updateScreen = (activeSlide) => {
-        const carouselScreen = document.querySelector(".image-display .screen");
-        const img = activeSlide.querySelector("img").cloneNode(true);
-        carouselScreen.innerHTML = "";
-        carouselScreen.appendChild(img);
-    };
+			bg.src = src;
+			bg.style.opacity = 1;
 
-    const scrollToActiveSlide = (activeSlide) => {
-        const carouselSlider = document.querySelector(".carousel__slider");
-        const { offsetLeft, offsetWidth } = activeSlide;
-        const { clientWidth } = carouselSlider;
+			main.classList.add("fade-zoom-out");
 
-        carouselSlider.scrollTo({
-            left: offsetLeft - clientWidth / 2 + offsetWidth / 2,
-            behavior: "smooth"
-        });
-    };
+			setTimeout(() => {
+				main.src = src;
 
-    const updateActiveSlideClass = (activeSlide) => {
-        document
-            .querySelectorAll(".carousel__slide.active")
-            .forEach((slide) => slide.classList.remove("active"));
-        activeSlide.classList.add("active");
-    };
+				main.classList.remove("fade-zoom-out");
+				main.classList.add("fade-zoom-in");
 
-    const updateCarousel = (activeSlide) => {
-        updateActiveSlideClass(activeSlide);
-        updateScreen(activeSlide);
-        scrollToActiveSlide(activeSlide);
-        updateButtonStates(activeSlide);
-    };
+				setTimeout(() => {
+					bg.style.opacity = 0;
+					main.classList.remove("fade-zoom-in");
+				}, 800); 
 
-    const updateButtonStates = (activeSlide) => {
-        const prevButton = document.querySelector(".carousel__btn.prev");
-        const nextButton = document.querySelector(".carousel__btn.next");
+			}, 600); 
+		}
 
-        prevButton.disabled = !getSiblingSlide(activeSlide, "prev");
-        nextButton.disabled = !getSiblingSlide(activeSlide, "next");
-    };
-
-    const handleKeydown = (e) => {
-        if (!e.target.closest(".carousel__slider")) return;
-        const activeSlide = getActiveSlide();
-        const newActiveSlide = getNewActiveSlide(e.key, activeSlide);
-
-        if (newActiveSlide) {
-            e.preventDefault();
-            updateCarousel(newActiveSlide);
-        }
-    };
-
-    const handleButtonClick = (e) => {
-        const activeSlide = getActiveSlide();
-        const newActiveSlide = getSiblingSlide(
-            activeSlide,
-            e.currentTarget.classList.contains("prev") ? "prev" : "next"
-        );
-
-        if (newActiveSlide) {
-            updateCarousel(newActiveSlide);
-        }
-    };
-
-    const handleCarouselClick = (e) => {
-        const clickedSlide = e.target.closest(".carousel__slide");
-        if (clickedSlide) {
-            updateCarousel(clickedSlide);
-        }
-    };
-
-    const initCarousel = () => {
-        const carouselSlider = document.querySelector(".carousel__slider");
-        const prevButton = document.querySelector(".carousel__btn.prev");
-        const nextButton = document.querySelector(".carousel__btn.next");
-
-        updateCarousel(getFirstSlide());
-
-        document.addEventListener("keydown", handleKeydown);
-        prevButton.addEventListener("click", handleButtonClick);
-        nextButton.addEventListener("click", handleButtonClick);
-        carouselSlider.addEventListener("click", handleCarouselClick);
-    };
-
-    initCarousel();
-})();
-
-</script>
+	</script>
 
 
 
@@ -574,25 +531,26 @@
 
 
 
-<script>
-    {% if messages %}
-        {% for message in messages %}
-            toastr.options = {
-                "closeButton": true,
-                "progressBar": true,
-                "timeOut": "5000"
-            };
 
-            {% if message.tags == "success" %}
-                toastr.success("{{ message }}");
-            {% elif message.tags == "error" %}
-                toastr.error("{{ message }}");
-            {% else %}
-                toastr.info("{{ message }}");
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-</script>
+	<script>
+		{% if messages %}
+			{% for message in messages %}
+				toastr.options = {
+					"closeButton": true,
+					"progressBar": true,
+					"timeOut": "5000"
+				};
+
+				{% if message.tags == "success" %}
+					toastr.success("{{ message }}");
+				{% elif message.tags == "error" %}
+					toastr.error("{{ message }}");
+				{% else %}
+					toastr.info("{{ message }}");
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</script>
 
 </body>
 
