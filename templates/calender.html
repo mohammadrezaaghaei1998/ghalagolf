@@ -14,6 +14,8 @@
 	<meta name="keywords" content="Ghala Golf | Calendar">
 	<meta name="description" content="Ghala Golf | Calendar">
 
+	<link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+
 	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,6 +33,9 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 		rel="stylesheet"
 		/>
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
 </head>
 
 <body>
@@ -80,23 +85,6 @@
 							</li>
 						</ul>
 					</div>
-					<!-- <div class="col-md-3 text-white">
-						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
-						<ul class="list-unstyled nav__block-item">
-							<li><a href="index.html" class="text-white">Onepage </a></li>
-							<li><a href="index.html" class="text-white">Styles </a></li>
-							<li><a href="index.html" class="text-white">Blog </a></li>
-							<li><a href="index.html" class="text-white">Single Post </a></li>
-							<li><a href="index.html" class="text-white">Contact us </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
-							<li><a href="index.html" class="text-white">About Us </a></li>
-							<li><a href="index.html" class="text-white">Our Team </a></li>
-						</ul>
-					</div> -->
 				</div>
 			</div>
 
@@ -118,213 +106,168 @@
 
 <style>
     .calendar-section {
-  position: relative;
-  overflow: hidden;
-}
+		position: relative;
+		overflow: hidden;
+	}
 
-.calendar-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
- background: url("{% static 'images/ball.png' %}") center/cover no-repeat;
-  z-index: -1;
-  background-attachment: fixed;
-}
+	.calendar-section::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: url("{% static 'images/ball.png' %}") center/cover no-repeat;
+		z-index: -1;
+		background-attachment: fixed;
+	}
 
 </style>
 
 
-<section class="calendar-section" 
-         id="calendar2025"
-         style="background-image: url(images/ball.png);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: fixed;">
-    <div class="section-header text-center fw-bold">
-        <div class="title">
-            <span>Stay Organized</span>
-        </div>
-        <h2 class="section-title">2025 Schedule</h2>
-    </div>
-    <div class="container p-0">
-        <div class="row g-0">
-        <!-- Left Calendar -->
-        <div class="col-lg-7 col-md-12 calendar-left">
-        
-            
-            <div id="calendarContainer"></div>
-
-            <div class="calendar-nav mt-3">
-            <button id="prevMonth">⟨ Previous</button>
-            <button id="nextMonth">Next ⟩</button>
-            </div>
-        </div>
-
-        <!-- Right Info Panel -->
-        <div class="col-lg-5 col-md-12 calendar-right">
-            <div id="infoContainer" class="w-100">
-            <h2 class="text-center mb-4 mt-3">Select a Date</h2>
-            <div id="infoLines" class="info-lines"></div>
-            </div>
-        </div>
-        </div>
-    </div>
-
-
-
-
-
-
-    <!-- Hidden Events Data -->
-    <!-- <div id="calendarEvents" style="display: none;">
-        <div data-month="January" data-day="15">
-            <h5>📅 January 15, 2025</h5>
-            <h5>🕐 Marketing Kickoff Meeting</h5>
-            <h5>📍 HQ – Room 2B</h5>
-            <h5>💡 Topic: Q1 Campaign Strategy</h5>
-        </div>
-
-        <div data-month="February" data-day="10">
-            <h5>📅 February 10, 2025</h5>
-            <h5>🕐 Client Presentation</h5>
-            <h5>📍 Downtown Office</h5>
-            <h5>💡 Topic: Brand Refresh Pitch</h5>
-        </div>
-
-        <div data-month="March" data-day="3">
-            <h5>📅 March 3, 2025</h5>
-            <h5>🕐 Internal Design Review</h5>
-            <h5>📍 Creative Hub</h5>
-            <h5>💡 Topic: Spring Product Line</h5>
-        </div>
-    </div> -->
-
-
-
-
-
-	<div id="calendarEvents" style="display: none;">
-		{% for event in events %}
-		<div data-month="{{ event.month }}" data-day="{{ event.day }}">
-			<h5>📅 {{ event.month }} {{ event.day }}, 2025</h5>
-
-			{% if event.time %}
-				<h5>🕐 {{ event.time }}</h5>
-			{% endif %}
-			{% if event.location %}
-				<h5>📍 {{ event.location }}</h5>
-			{% endif %}
-			{% if event.description %}
-				<h5>💡 {{ event.description }}</h5>
-			{% endif %}
+	<section class="calendar-section" 
+			id="calendar2025"
+			style="background-image: url(images/ball.png);
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-attachment: fixed;">
+		<div class="section-header text-center fw-bold">
+			<div class="title" data-aos="fade-down" data-aos-delay="600">
+				<span>Stay Organized</span>
+			</div>
+			<h2 class="section-title" data-aos="fade-down" data-aos-delay="500">2025 Schedule</h2>
 		</div>
-		{% endfor %}
-	</div>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<footer id="footer">
-		
-			<div class="container">
+		<div class="container p-0">
+			<div class="row g-0">
+			<!-- Left Calendar -->
+			<div class="col-lg-7 col-md-12 calendar-left">
+			
 				
-				<div class="row">
+				<div id="calendarContainer"></div>
 
-					<div class="col-md-3">
+				<div class="calendar-nav mt-3">
+					<button id="prevMonth" data-aos="fade-out" data-aos-delay="500">⟨ Previous</button>
+					<button id="nextMonth" data-aos="fade-out" data-aos-delay="500">Next ⟩</button>
+				</div>
+			</div>
 
-						<div class="footer-menu menu-item-01">
-							<img src="{% static 'images/logo.png' %}" alt="logo" class="footer-logo">
-							<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iste consequatur nulla iusto omnis aliquam alias at libero? Voluptates, minus!</p> -->
-							
-						</div>
+			<!-- Right Info Panel -->
+			<div class="col-lg-5 col-md-12 calendar-right">
+				<div id="infoContainer" class="w-100">
+				<h2 class="text-center mb-4 mt-3">Select a Date</h2>
+				<div id="infoLines" class="info-lines"></div>
+				</div>
+			</div>
+			</div>
+		</div>
 
-					</div>
 
-					<div class="col-md-3">
+		<div id="calendarEvents" style="display: none;">
+			{% for event in events %}
+			<div data-month="{{ event.month }}" data-day="{{ event.day }}">
+				<h5>📅 {{ event.month }} {{ event.day }}, 2025</h5>
 
-						<div class="footer-menu menu-item-02">
-							<h5>quick links</h5>
-							<ul class="menu-list">
-								<li class="menu-item">
-									<a href="{% url 'index' %}">home</a>
-								</li>
-								<li class="menu-item">
-									<a href="{% url 'about-us' %}">about us </a>
-								</li>
-								<li class="menu-item">
-									<a href="{% url 'membership' %}">membership</a>
-								</li>
-								<li class="menu-item">
-									<a href="{% url 'calendar' %}">calendar</a>
-								</li>
-								<li class="menu-item">
-									<a href="{% url 'news' %}">news</a>
-								</li>
-								
-							</ul>
-						</div>
+				{% if event.time %}
+					<h5>🕐 {{ event.time }}</h5>
+				{% endif %}
+				{% if event.location %}
+					<h5>📍 {{ event.location }}</h5>
+				{% endif %}
+				{% if event.description %}
+					<h5>💡 {{ event.description }}</h5>
+				{% endif %}
+			</div>
+			{% endfor %}
+		</div>
 
-					</div>
+	</section>
 
-					<div class="col-md-3">
 
-						<div class="footer-menu menu-item-03">
-							<h5>contact info</h5>
-							<ul class="menu-list">
-								
-								<li class="menu-item">
-									<i class="icon icon-location2"></i>Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
-								</li>
-								<li class="menu-item">
-									<i class="icon icon-phone"></i>+968 9219 4957
-								</li>
-								<li class="menu-item">
-									<i class="icon icon-envelope-o"></i><a href="mailto:proshop@ghalagolf.com" class="mail-id">proshop@ghalagolf.com</a>
-								</li>
-							</ul>
-						</div>
 
-					</div>
+	<footer id="footer">
+	
+		<div class="container">
+			
+			<div class="row">
 
-					<div class="col-md-3">
+				<div class="col-md-3">
 
-						<div class="footer-menu menu-item-04">
-							<h5>Follow Us</h5>
-							<div class="social-links">
-								<ul>
-									<li>
-										<a href="https://www.facebook.com/GhalaGolfClub/"><i class="icon icon-facebook"></i></a>
-									</li>
-									
-									<li>
-										<a href="https://www.instagram.com/ghalagolfclub?igsh=MTl0eW5udzcyb2FsbA=="><i class="fab fa-instagram"></i></a>
-									</li>
-									<li>
-										<a href="https://www.linkedin.com/company/ghala-golf-club/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-
+					<div class="footer-menu menu-item-01">
+						<img src="{% static 'images/logo.png' %}" alt="logo" class="footer-logo">
+						<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iste consequatur nulla iusto omnis aliquam alias at libero? Voluptates, minus!</p> -->
+						
 					</div>
 
 				</div>
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-02">
+						<h5>quick links</h5>
+						<ul class="menu-list">
+							<li class="menu-item">
+								<a href="{% url 'index' %}">home</a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'about-us' %}">about us </a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'membership' %}">membership</a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'calendar' %}">calendar</a>
+							</li>
+							<li class="menu-item">
+								<a href="{% url 'news' %}">news</a>
+							</li>
+							
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-03">
+						<h5>contact info</h5>
+						<ul class="menu-list">
+							
+							<li class="menu-item">
+								<i class="icon icon-location2"></i>Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-phone"></i>+968 9219 4957
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-envelope-o"></i><a href="mailto:proshop@ghalagolf.com" class="mail-id">proshop@ghalagolf.com</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="col-md-3">
+
+					<div class="footer-menu menu-item-04">
+						<h5>Follow Us</h5>
+						<div class="social-links">
+							<ul>
+								<li>
+									<a href="https://www.facebook.com/GhalaGolfClub/"><i class="icon icon-facebook"></i></a>
+								</li>
+								
+								<li>
+									<a href="https://www.instagram.com/ghalagolfclub?igsh=MTl0eW5udzcyb2FsbA=="><i class="fab fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/company/ghala-golf-club/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
 			</div>
+		</div>
 	</footer>
 
 	<div id="footer-bottom">
@@ -348,7 +291,7 @@
 
 
 
-
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 	
 	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
@@ -360,113 +303,120 @@
 	<script src="{% static 'js/plugins.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
 
-
-
-<script>
-	$(document).ready(function() {
-	const months = [
-		"January","February","March","April","May","June",
-		"July","August","September","October","November","December"
-	];
-	const weekdays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-	const calendarContainer = $("#calendarContainer");
-	let currentMonthIndex = new Date().getMonth();
-	const currentDay = new Date().getDate();
-	const currentYear = new Date().getFullYear();
-
-	// --- Get all event dates from HTML ---
-	const events = {};
-	$("#calendarEvents div[data-month][data-day]").each(function() {
-		const month = $(this).data("month");
-		const day = $(this).data("day");
-		if (!events[month]) events[month] = [];
-		events[month].push(day);
-	});
-
-	function renderMonth(index) {
-		calendarContainer.html("");
-		const month = months[index];
-		const monthCard = $(`
-		<div class="month-card">
-			<div class="month-name">${month}</div>
-			<div class="days-header"></div>
-			<div class="days-grid" id="month${index}"></div>
-		</div>
-		`);
-		calendarContainer.append(monthCard);
-
-		const header = monthCard.find(".days-header");
-		weekdays.forEach(day => header.append(`<div class="day-name">${day}</div>`));
-
-		const firstDay = new Date(2025, index, 1).getDay();
-		const daysInMonth = new Date(2025, index + 1, 0).getDate();
-		const daysGrid = $(`#month${index}`);
-
-		for (let i = 0; i < firstDay; i++) daysGrid.append(`<div class="day empty"></div>`);
-
-		for (let d = 1; d <= daysInMonth; d++) {
-		const isToday =
-			index === new Date().getMonth() &&
-			d === new Date().getDate() &&
-			currentYear === 2025;
-
-		const hasEvent = events[month] && events[month].includes(d);
-
-		daysGrid.append(`
-			<div class="day ${isToday ? "active today" : ""} ${hasEvent ? "has-event" : ""}"
-				data-month="${month}" data-day="${d}">
-			${d}
-			</div>
-		`);
-		}
-	}
-
-	renderMonth(currentMonthIndex);
-	highlightTodayInfo();
-
-	$("#prevMonth").click(() => {
-		currentMonthIndex = (currentMonthIndex - 1 + 12) % 12;
-		renderMonth(currentMonthIndex);
-	});
-	$("#nextMonth").click(() => {
-		currentMonthIndex = (currentMonthIndex + 1) % 12;
-		renderMonth(currentMonthIndex);
-	});
-
-	$(document).on("click", ".day", function() {
-		if ($(this).hasClass("empty")) return;
-		$(".day").removeClass("active");
-		$(this).addClass("active");
-
-		const day = $(this).data("day");
-		const month = $(this).data("month");
-		showInfo(month, day);
-	});
-
-	function showInfo(month, day) {
-		const infoContainer = $("#infoLines");
-		infoContainer.html("");
-
-		const eventData = $(`#calendarEvents div[data-month='${month}'][data-day='${day}']`);
-		if (eventData.length > 0) {
-		eventData.find("h5").each((i, el) => {
-			setTimeout(() => {
-			infoContainer.append(`<h5 class="info-line">${$(el).html()}</h5>`);
-			}, i * 200);
+	<script>
+		AOS.init({
+			duration: 1000,  
+			once: true,      
 		});
-		} else {
-		infoContainer.append(`<h5 class="info-line">📅 ${month} ${day}, 2025</h5>`);
-		infoContainer.append(`<h5 class="info-line">No events for this date.</h5>`);
-		}
-	}
+	</script>
 
-	function highlightTodayInfo() {
-		const todayMonth = new Date().getMonth();
-		const todayDay = new Date().getDate();
-		if (currentYear === 2025) showInfo(months[todayMonth], todayDay);
-	}
-	});
-</script>
+
+
+	<script>
+		$(document).ready(function() {
+		const months = [
+			"January","February","March","April","May","June",
+			"July","August","September","October","November","December"
+		];
+		const weekdays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+		const calendarContainer = $("#calendarContainer");
+		let currentMonthIndex = new Date().getMonth();
+		const currentDay = new Date().getDate();
+		const currentYear = new Date().getFullYear();
+
+		// --- Get all event dates from HTML ---
+		const events = {};
+		$("#calendarEvents div[data-month][data-day]").each(function() {
+			const month = $(this).data("month");
+			const day = $(this).data("day");
+			if (!events[month]) events[month] = [];
+			events[month].push(day);
+		});
+
+		function renderMonth(index) {
+			calendarContainer.html("");
+			const month = months[index];
+			const monthCard = $(`
+			<div class="month-card">
+				<div class="month-name">${month}</div>
+				<div class="days-header"></div>
+				<div class="days-grid" id="month${index}"></div>
+			</div>
+			`);
+			calendarContainer.append(monthCard);
+
+			const header = monthCard.find(".days-header");
+			weekdays.forEach(day => header.append(`<div class="day-name">${day}</div>`));
+
+			const firstDay = new Date(2025, index, 1).getDay();
+			const daysInMonth = new Date(2025, index + 1, 0).getDate();
+			const daysGrid = $(`#month${index}`);
+
+			for (let i = 0; i < firstDay; i++) daysGrid.append(`<div class="day empty"></div>`);
+
+			for (let d = 1; d <= daysInMonth; d++) {
+			const isToday =
+				index === new Date().getMonth() &&
+				d === new Date().getDate() &&
+				currentYear === 2025;
+
+			const hasEvent = events[month] && events[month].includes(d);
+
+			daysGrid.append(`
+				<div class="day ${isToday ? "active today" : ""} ${hasEvent ? "has-event" : ""}"
+					data-month="${month}" data-day="${d}">
+				${d}
+				</div>
+			`);
+			}
+		}
+
+		renderMonth(currentMonthIndex);
+		highlightTodayInfo();
+
+		$("#prevMonth").click(() => {
+			currentMonthIndex = (currentMonthIndex - 1 + 12) % 12;
+			renderMonth(currentMonthIndex);
+		});
+		$("#nextMonth").click(() => {
+			currentMonthIndex = (currentMonthIndex + 1) % 12;
+			renderMonth(currentMonthIndex);
+		});
+
+		$(document).on("click", ".day", function() {
+			if ($(this).hasClass("empty")) return;
+			$(".day").removeClass("active");
+			$(this).addClass("active");
+
+			const day = $(this).data("day");
+			const month = $(this).data("month");
+			showInfo(month, day);
+		});
+
+		function showInfo(month, day) {
+			const infoContainer = $("#infoLines");
+			infoContainer.html("");
+
+			const eventData = $(`#calendarEvents div[data-month='${month}'][data-day='${day}']`);
+			if (eventData.length > 0) {
+			eventData.find("h5").each((i, el) => {
+				setTimeout(() => {
+				infoContainer.append(`<h5 class="info-line">${$(el).html()}</h5>`);
+				}, i * 200);
+			});
+			} else {
+			infoContainer.append(`<h5 class="info-line">📅 ${month} ${day}, 2025</h5>`);
+			infoContainer.append(`<h5 class="info-line">No events for this date.</h5>`);
+			}
+		}
+
+		function highlightTodayInfo() {
+			const todayMonth = new Date().getMonth();
+			const todayDay = new Date().getDate();
+			if (currentYear === 2025) showInfo(months[todayMonth], todayDay);
+		}
+		});
+	</script>
 
 
 

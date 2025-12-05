@@ -14,12 +14,16 @@
 	<meta name="keywords" content="Ghala Golf | Gallery">
 	<meta name="description" content="Ghala Golf | Gallery">
 
+	<link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+
 	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+
+	<link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +32,8 @@
 		rel="stylesheet">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 	
 
 </head>
@@ -77,23 +83,6 @@
 							</li>
 						</ul>
 					</div>
-					<!-- <div class="col-md-3 text-white">
-						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
-						<ul class="list-unstyled nav__block-item">
-							<li><a href="index.html" class="text-white">Onepage </a></li>
-							<li><a href="index.html" class="text-white">Styles </a></li>
-							<li><a href="index.html" class="text-white">Blog </a></li>
-							<li><a href="index.html" class="text-white">Single Post </a></li>
-							<li><a href="index.html" class="text-white">Contact us </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
-							<li><a href="index.html" class="text-white">About Us </a></li>
-							<li><a href="index.html" class="text-white">Our Team </a></li>
-						</ul>
-					</div> -->
 				</div>
 			</div>
 
@@ -112,32 +101,6 @@
 	</div>
 
 
-
-
-
-	<!-- <div class="hero">
-		<div class="hero-inner">
-				<div class="hero-title">
-					<h1 class="text-light title font-2">time machine</h1>
-					<p class="text-capitalize text-light">here starts awesomeness</p>
-				</div>
-				<a href="#" class="sd">Scroll Down</a>
-		</div>
-	</div>
-	<div class="content clearfix">
-		<div class="container" style="padding-top: 60px">
-			<div class="row">
-				<div class="col-md-5">
-					<h2 class="text-uppercase">rame ipsum</h2>
-					<p class="font-alt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptatibus molestia!</p>
-				</div>
-				<div class="col-md-7">
-					<p style="padding-top: 47px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam earum eos corporis totam vel, eaque sapiente officiis sint culpa inventore blanditiis hic cupiditate illo nam assumenda reprehenderit suscipit dolorum.</p>			
-				</div>
-			</div>	
-		</div>
-		<div class="container" style="height: 100vh"></div>
-	</div> -->
 
 
 
@@ -182,10 +145,10 @@
 						<div class="col-md-12">
 
 							<div class="section-header">
-								<div class="title">
+								<div class="title" data-aos="fade-down" data-aos-delay="600">
 									<span>Some of Our Activities</span>
 								</div>
-								<h2 class="section-title light">Our Mark</h2>
+								<h2 class="section-title light" data-aos="fade-out" data-aos-delay="500">Our Mark</h2>
 							</div>
 						</div>
 					</div>
@@ -204,7 +167,7 @@
 						</div> -->
 
 
-						<div id="filters" class="button-group d-flex flex-wrap gap-4 py-5">
+						<div id="filters" class="button-group d-flex flex-wrap gap-4 py-5" >
 							<a href="#" class="btn btn-outline-light rounded-pill text-uppercase is-checked" data-filter="*">
 								All
 							</a>
@@ -220,7 +183,7 @@
 
 					</div>
 
-					<div class="grid p-0 clearfix row row-cols-2 row-cols-lg-3 row-cols-xl-3">
+					<div class="grid p-0 clearfix row row-cols-2 row-cols-lg-3 row-cols-xl-3" data-aos="fade-down" data-aos-delay="500">
 
 						{% for pic in pictures %}
 							<div class="col mb-4 portfolio-item cat-{{ pic.category.id }}">
@@ -250,15 +213,15 @@
 	<section class="slider video-slider">
 		<div class="container text-center mb-5">
 			<div class="section-header">
-				<div class="title"><span>Stories in Action</span></div>
-				<h2 class="section-title">Our Legacy in Motion</h2>
+				<div class="title" data-aos="fade-down" data-aos-delay="600"><span>Stories in Action</span></div>
+				<h2 class="section-title" data-aos="fade-down" data-aos-delay="500">Our Legacy in Motion</h2>
 			</div>
 		</div>
 
-		<button class="slider__control prev"><i class="fa-solid fa-chevron-left"></i></button>
-		<button class="slider__control next"><i class="fa-solid fa-chevron-right"></i></button>
+		<button class="slider__control prev" data-aos="fade-out" data-aos-delay="500"><i class="fa-solid fa-chevron-left"></i></button>
+		<button class="slider__control next" data-aos="fade-out" data-aos-delay="500"><i class="fa-solid fa-chevron-right"></i></button>
 
-		<div class="slider__container" data-multislide="false" data-step="2.5">
+		<div class="slider__container" data-multislide="false" data-step="2.5" data-aos="fade-out" data-aos-delay="300">
 
 			{% for video in videos %}
 				<div class="slider__item">
@@ -315,21 +278,21 @@
 
 				<div class="container position-relative text-white">
 					<div class="col-lg-8 mx-auto">
-					<h2 class="mb-4 font-2">Become a Member of Ghala Golf Club</h2>
-					<p class="mb-4">
-						Join Ghala Golf Club and immerse yourself in a world of exceptional courses, exclusive events, and a vibrant golfing community. 
-						Whether you're looking to improve your game or enjoy a relaxing round with friends, Ghala Golf Club offers the perfect environment for golfers of all levels.
-					</p>
-					<a href="{% url 'golf-academy' %}">
-						<button class="btn btn-join px-4 py-2">Join Now</button>
-					</a>
+						<h2 class="mb-4 font-2" style="font-size: 32px;" data-aos="fade-out" data-aos-delay="300">Become a Member of Ghala Golf Club</h2>
+						<p class="mb-4" data-aos="fade-out" data-aos-delay="400">
+							Join Ghala Golf Club and immerse yourself in a world of exceptional courses, exclusive events, and a vibrant golfing community. 
+							Whether you're looking to improve your game or enjoy a relaxing round with friends, Ghala Golf Club offers the perfect environment for golfers of all levels.
+						</p>
+						<a href="{% url 'golf-academy' %}" data-aos="fade-out" data-aos-delay="400">
+							<button class="btn btn-join px-4 py-2">Join Now</button>
+						</a>
 
-					<!-- <a href="{% url 'golf-academy' %}" 
-								class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center" 
-								style="border-radius: 0 !important; min-width: 280px !important;">
-								<span>Become a Member</span>
-								<i class="fas fa-arrow-right"></i>
-							</a> -->
+						<!-- <a href="{% url 'golf-academy' %}" 
+									class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center" 
+									style="border-radius: 0 !important; min-width: 280px !important;">
+									<span>Become a Member</span>
+									<i class="fas fa-arrow-right"></i>
+								</a> -->
 					</div>
 				</div>
 			</div>
@@ -349,14 +312,14 @@
 
 		<div class="container text-center mb-5">
 			<div class="section-header">
-				<div class="title"><span>The Art of Performance</span></div>
-				<h2 class="section-title">Most Viewed</h2>
+				<div class="title" data-aos="fade-down" data-aos-delay="600"><span>The Art of Performance</span></div>
+				<h2 class="section-title" data-aos="fade-down" data-aos-delay="500">Most Viewed</h2>
 			</div>
 		</div>
 
 		<!-- LEFT MAIN VIDEO -->
 		{% if left_video %}
-			<div class="left-video" data-video-src="{{ left_video.video_file.url }}">
+			<div class="left-video" data-video-src="{{ left_video.video_file.url }}" data-aos="fade-out" data-aos-delay="500">
 				<img src="{{ left_video.thumbnail.url }}" alt="{{ left_video.title }}" class="thumbnail-video">
 
 				<div class="video-overlay">
@@ -373,7 +336,7 @@
 
 
 		<!-- RIGHT SMALL VIDEOS -->
-		<div class="right-videos">
+		<div class="right-videos" data-aos="fade-out" data-aos-delay="500">
 			{% for video in right_videos %}
 				<div data-video-src="{{ video.video_file.url }}">
 					<img src="{{ video.thumbnail.url }}" alt="{{ video.title }}" class="thumbnail-video">
@@ -520,7 +483,7 @@
 
 
 
-
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
 	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
@@ -532,7 +495,12 @@
 	<script src="{% static 'js/plugins.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
 
-
+	<script>
+		AOS.init({
+			duration: 1000,  
+			once: true,      
+		});
+	</script>
 
 
 

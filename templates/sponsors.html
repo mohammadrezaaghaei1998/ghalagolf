@@ -14,6 +14,8 @@
 	<meta name="keywords" content="Ghala Golf | Sponsors">
 	<meta name="description" content="Ghala Golf | Sponsors">
 
+	<link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+
 	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,10 +32,9 @@
 
 
 
-		<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-		rel="stylesheet"
-		/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
 <body>
@@ -81,23 +82,6 @@
 							</li>
 						</ul>
 					</div>
-					<!-- <div class="col-md-3 text-white">
-						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
-						<ul class="list-unstyled nav__block-item">
-							<li><a href="index.html" class="text-white">Onepage </a></li>
-							<li><a href="index.html" class="text-white">Styles </a></li>
-							<li><a href="index.html" class="text-white">Blog </a></li>
-							<li><a href="index.html" class="text-white">Single Post </a></li>
-							<li><a href="index.html" class="text-white">Contact us </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
-							<li><a href="index.html" class="text-white">About Us </a></li>
-							<li><a href="index.html" class="text-white">Our Team </a></li>
-						</ul>
-					</div> -->
 				</div>
 			</div>
 
@@ -147,22 +131,22 @@
 
 	<section id="testimonial" class="padding-large">
 		<div class="container">
-			<div class="row p-4">
+			<div class="row p-4" data-aos="fade-down" data-aos-delay="600">
 
 				<div class="col-md-6">
 
 					<div class="testimonial-block mt-0">
 						<div class="section-header">
-							<div class="title">
+							<div class="title" data-aos="fade-down" data-aos-delay="600">
 								<span>{{ partnership.small_title }}</span>
 							</div>
-							<h2 class="section-title">{{ partnership.main_title }}</h2>
+							<h2 class="section-title mb-5" data-aos="fade-down" data-aos-delay="500">{{ partnership.main_title }}</h2>
 						</div>
 
 						<div class="testimonials-inner">
-							<q>{{ partnership.description }}</q>
+							<q data-aos="fade-out" data-aos-delay="400">{{ partnership.description }}</q>
 
-							<div class="btn-wrap">
+							<div class="btn-wrap" data-aos="fade-up" data-aos-delay="600">
 								<a href="{% url 'about-us' %}" class="btn-with-line-black">Read More</a>
 							</div>
 						</div>
@@ -170,9 +154,9 @@
 
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-6" >
 					<figure class="jarallax-keep-img testimonial-image m-0" data-speed="0.5">
-						<img src="{{ partnership.image.url }}" alt="review" class="jarallax-img">
+						<img src="{{ partnership.image.url }}" alt="review" class="jarallax-img" >
 					</figure>
 				</div>
 
@@ -186,17 +170,17 @@
 	<div class="container ">
 		<div class="section ">
 			<section class="partner-section p-4">
-				<div class="title-row mt-3">
+				<div class="title-row mt-3" data-aos="fade-down" data-aos-delay="600">
 					<h5 class="section-title ">Strategic Partners</h5>
 					<div class="title-rule" aria-hidden="true"></div>
 				</div>
 
-				<p>Our team will help you implement, extend, support and upgrade applications from end to end—all with the goal of delivering an experience that leaves a lasting, transformational impact.</p>
+				<p data-aos="fade-down" data-aos-delay="400">Our team will help you implement, extend, support and upgrade applications from end to end—all with the goal of delivering an experience that leaves a lasting, transformational impact.</p>
 
 				 <div class="row text-center mt-2">
 					{% for partner in partners %}
 					<div class="col-md-2 partner-card">
-						<img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+						<img src="{{ partner.logo.url }}" alt="{{ partner.name }}" data-aos="fade-out" data-aos-delay="600">
 						<div>
 							<a href="#" data-bs-toggle="modal" data-bs-target="#{{ partner.partner_id }}">
 								Learn more →
@@ -211,14 +195,14 @@
 
 		<div class="section">
 			<section class="partner-section p-4">
-				<div class="title-row mt-2">
+				<div class="title-row mt-2" data-aos="fade-down" data-aos-delay="600">
 					<h5 class="section-title ">Business Application Partners</h5>
 					<div class="title-rule" aria-hidden="true"></div>
 				</div>
 
-				<p>Leverage our partnerships below to tailor high quality, cost-effective software solutions that seamlessly integrate with or enhance your existing systems, all without the need for extensive customization.</p>
+				<p data-aos="fade-down" data-aos-delay="400">Leverage our partnerships below to tailor high quality, cost-effective software solutions that seamlessly integrate with or enhance your existing systems, all without the need for extensive customization.</p>
 
-				<div class="container d-flex justify-content-end">
+				<div class="container d-flex justify-content-end" data-aos="fade-out" data-aos-delay="400">
 					<div class="col-sm-12 col-md-12 col-lg-12  membership-form">
 						<div class="row">
 							<h2>Partnership Form</h2>
@@ -280,10 +264,11 @@
 						<div class="d-flex align-items-center gap-3 text-dark">
 							<img src="{{ partner.logo.url }}" class="img-fluid" alt="{{ partner.name }}" style="width: 70px;">
 							|
-							<h5 class="modal-title mb-0 text-white">{{ partner.name }}</h5>
+							<h5 class="modal-title mb-0 text-dark">{{ partner.name }}</h5>
 						</div>
 
-						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+						<!-- <button type="button" class="btn-close btn-close-white"  data-bs-dismiss="modal"></button> -->
+						<span type="button"  class="close-btn" data-bs-dismiss="modal" style=" color: black !important;">&times;</span>
 					</div>
 
 					<div class="modal-body">
@@ -439,6 +424,9 @@
 
 
 
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -455,7 +443,12 @@
 
 
 
-
+	<script>
+		AOS.init({
+			duration: 1000,  
+			once: true,      
+		});
+	</script>
 
 
 <script>

@@ -15,6 +15,8 @@
 	<meta name="keywords" content="Ghala Golf | Membership">
 	<meta name="description" content="Ghala Golf | Membership">
 
+	<link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+
 	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -29,6 +31,8 @@
 		rel="stylesheet">
 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
 </head>
 
@@ -76,24 +80,7 @@
 								</a>
 							</li>
 						</ul>
-					</div>
-					<!-- <div class="col-md-3 text-white">
-						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
-						<ul class="list-unstyled nav__block-item">
-							<li><a href="index.html" class="text-white">Onepage </a></li>
-							<li><a href="index.html" class="text-white">Styles </a></li>
-							<li><a href="index.html" class="text-white">Blog </a></li>
-							<li><a href="index.html" class="text-white">Single Post </a></li>
-							<li><a href="index.html" class="text-white">Contact us </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
-							<li><a href="index.html" class="text-white">About Us </a></li>
-							<li><a href="index.html" class="text-white">Our Team </a></li>
-						</ul>
-					</div> -->
+					</div>	
 				</div>
 			</div>
 
@@ -177,10 +164,10 @@
 			<div class="row">
 				<div class="col">
 					<div class="section-header">
-						<div class="title">
+						<div class="title" data-aos="fade-down" data-aos-delay="500">
 							<span>Amenities designed around you</span>
 						</div>
-						<h2 class="section-title mb-0">Beyond Expectations</h2>
+						<h2 class="section-title mb-0" data-aos="fade-down" data-aos-delay="400">Beyond Expectations</h2>
 					</div>
 				</div>
 			</div>
@@ -190,7 +177,7 @@
 			<div class="row pt-0 p-4 mb-4">
 				<div class="col-8">
 				<!-- <p>Whether playing our 18-hole championship course or our 9-hole course, we have plenty of options when it comes to green fees with weekend and weekday as well as summer and winter rates available.</p> -->
-					<p>{{ section.description }}</p>
+					<p data-aos="fade-up" data-aos-delay="500">{{ section.description }}</p>
 				</div>
 			</div>
 	
@@ -305,11 +292,11 @@
 			{% for category in categories %}
 				<div class="row mb-4">
 					<div class="col-12">
-						<h5 class="fw-bold mb-3">{{ category.name }}</h5>
+						<h5 class="fw-bold mb-3" data-aos="fade-out" data-aos-delay="500">{{ category.name }}</h5>
 					</div>
 
 					{% for amenity in category.amenities.all %}
-						<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities">
+						<div class="col-md-4 col-sm-4 d-flex align-items-start mb-3 aminities" data-aos="fade-out" data-aos-delay="800">
 							{% if amenity.image %}
 								<img src="{{ amenity.image.url }}" class="me-2 aminities_svg" width="30" alt="{{ amenity.name }}">
 							{% else %}
@@ -340,7 +327,7 @@
 						<!-- <div class="title">
 							<span>Amenities designed around you</span>
 						</div> -->
-						<h2 class="section-title mb-0">Membership Plans & Fees</h2>
+						<h2 class="section-title mb-0" data-aos="fade-down" data-aos-delay="500">Membership Plans & Fees</h2>
 					</div>
 				</div>
 			</div>
@@ -353,14 +340,14 @@
 						<table class="table table-borderless align-middle rate-table">
 							<thead>
 								<tr>
-									<th style="background-color: #C5A992 !important;" class="text-start table-title ps-4 pt-4 pb-4"><h4>Description</h4></th>
-									<th style="background-color: #C5A992 !important;" class="text-center table-title pt-4 pb-4"><h4>Duration</h4></th>
-									<th style="background-color: #C5A992 !important;" class="text-center table-title pt-4 pb-4"><h4 class="pr-5">Fee + VAT</h4></th>
+									<th style="background-color: #C5A992 !important;" class="text-start table-title ps-4 pt-4 pb-4" data-aos="fade-down" data-aos-delay="500"><h4>Description</h4></th>
+									<th style="background-color: #C5A992 !important;" class="text-center table-title pt-4 pb-4" data-aos="fade-down" data-aos-delay="600"><h4>Duration</h4></th>
+									<th style="background-color: #C5A992 !important;" class="text-center table-title pt-4 pb-4" data-aos="fade-down" data-aos-delay="700"><h4 class="pr-5">Fee + VAT</h4></th>
 								</tr>
 							</thead>
 							<tbody>
 								{% for fee in golf_fees %}
-									<tr class="tr-main">
+									<tr class="tr-main" data-aos="fade-down" data-aos-delay="500">
 										<td><h4 class="ps-4 p-2"><strong>{{ fee.description }}</strong></h4></td>
 										<td class="text-center">{{ fee.duration }}</td>
 										<td class="text-center">{{ fee.fee }} OMR</td>
@@ -373,7 +360,7 @@
 
 					<div class="row">
 						<div class="col">
-							<div class="btn-wrap col-3">
+							<div class="btn-wrap col-3" data-aos="fade-up" data-aos-delay="500">
 								<a href="{% url 'golf-academy' %}" 
 									class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center" 
 									style="border-radius: 0 !important; min-width: 280px !important;">
@@ -502,7 +489,8 @@
 	</div>
 
 
-
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	
 
 	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
 	<script src="{% static 'js/ui-easing.js' %}"></script>
@@ -515,7 +503,12 @@
 
 
 
-
+	<script>
+		AOS.init({
+			duration: 1000,  
+			once: true,      
+		});
+	</script>
 
 
 

@@ -17,6 +17,7 @@
       /* background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(6px); */
       z-index: 1;
+      
     }
 
     .membership-form {
@@ -28,15 +29,100 @@
       padding: 2.5rem 3rem;
       box-shadow: 0 0 30px rgba(0,0,0,0.6);
       border: 1px solid rgba(255,255,255,0.08);
+      margin-top:70px !important;
     }
 
 
   @media (max-width: 992px) {
     .membership-form {
       margin-top:100px;
-    
+
+      
     }
   }
+
+
+
+
+
+/* Tablets */
+/* @media (max-width: 992px) {
+    .membership-form {
+        margin-top: 120px !important;
+    }
+} */
+
+/* Phones */
+@media (max-width: 768px) {
+    .membership-form {
+        margin-top: 150px !important;
+    }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+    .membership-form {
+        margin-top: 90px !important;
+    }
+}
+@media (max-width: 540px) {
+    .membership-form {
+        margin-top: 190px !important;
+    }
+    .golf-academy-video {
+        margin-top: 120px !important;
+    }
+}
+
+
+
+@media (width: 375px) {
+    .membership-form {
+        margin-top: 290px !important;
+    }
+}
+
+@media (width: 375px) {
+    .golf-academy-video {
+        margin-top: 190px !important;
+    }
+}
+
+
+@media (width: 360px) {
+    .membership-form {
+        margin-top:190px !important;
+    }
+}
+
+@media (width: 360px) {
+    .golf-academy-video {
+        margin-top: 190px !important;
+    }
+}
+
+
+@media (width: 820px) {
+    section {
+     height: 80vh !important;
+    }
+}
+  
+@media (width: 912px) {
+    section {
+     height: 80vh !important;
+    }
+}
+
+@media (width: 853px) {
+    section {
+     height: 80vh !important;
+    }
+}
+ 
+ 
+
+
 
 
   @media (width: 540px) {

@@ -14,6 +14,8 @@
 	<meta name="keywords" content="Ghala Golf Club">
 	<meta name="description" content="Ghala Golf Club">
 
+	<link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+
 	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -27,6 +29,10 @@
 		rel="stylesheet">
 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
 </head>
 
 <body>
@@ -76,23 +82,6 @@
 							</li>
 						</ul>
 					</div>
-					<!-- <div class="col-md-3 text-white">
-						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
-						<ul class="list-unstyled nav__block-item">
-							<li><a href="index.html" class="text-white">Onepage </a></li>
-							<li><a href="index.html" class="text-white">Styles </a></li>
-							<li><a href="index.html" class="text-white">Blog </a></li>
-							<li><a href="index.html" class="text-white">Single Post </a></li>
-							<li><a href="index.html" class="text-white">Contact us </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
-							<li><a href="index.html" class="text-white">About Us </a></li>
-							<li><a href="index.html" class="text-white">Our Team </a></li>
-						</ul>
-					</div> -->
 				</div>
 			</div>
 
@@ -130,26 +119,6 @@
 
 
 
-<!-- 	
-	<section id="intro" class="scrollspy-section">
-		<div class="slider-item jarallax" data-speed="0.2">
-			<video class="jarallax-img" autoplay muted loop playsinline>
-				<source src="{% static 'videos/video-header.mp4' %}" type="video/mp4">
-			</video>
-
-			<div class="banner-content">
-				<h2 class="banner-title txt-fx">Ghala Golf Club</h2>
-				<div class="btn-wrap">
-					<a href="#" class="btn-with-line">View More</a>
-				</div>
-			</div>
-		</div>
-
-
-		
-	</section> -->
-
-
 
 
 	<section id="about" class="scrollspy-section padding-xlarge">
@@ -159,27 +128,27 @@
 				<div class="col-md-12">
 
 					<div class="section-header">
-						<div class="title">
+						<div class="title" data-aos="fade-down" data-aos-delay="500">
 							<span>who are we</span>
 						</div>
-						<h2 class="section-title">About Us</h2>
+						<h2 class="section-title" data-aos="fade-down" data-aos-delay="400">About Us</h2>
 					</div>
 				</div>
 
 			</div>
 
 			<div class="row">
-				<div class="col-md-6">
-					<figure class="jarallax-keep-img">
+				<div class="col-md-6" data-aos="fade-right" data-aos-delay="400">
+					<figure class="jarallax-keep-img" >
 						<img src="{{ about_us.image.url }}" alt="about us" class="jarallax-img single-image">
 					</figure>
 				</div>
 				<div class="col-md-6 description text-lead">
-					<p class="mb-3"><strong>{{ about_us.description_1 }}</strong></p>
-					<p class="mb-4">{{ about_us.description_2 }}</p>
-					<p class="mb-0">{{ about_us.description_3 }}</p>
+					<p class="mb-3" data-aos="fade-left" data-aos-delay="200"><strong>{{ about_us.description_1 }}</strong></p>
+					<p class="mb-4" data-aos="fade-left" data-aos-delay="300">{{ about_us.description_2 }}</p>
+					<p class="mb-0" data-aos="fade-left" data-aos-delay="400">{{ about_us.description_3 }}</p>
 
-					<div class="btn-wrap  col-3">
+					<div class="btn-wrap  col-3" data-aos="fade-up" data-aos-delay="600">
 						{% if about_us.button_url_name %}
 							<!-- <a href="{% url about_us.button_url_name %}" class="btn btn-accent btn-xlarge btn-rounded">
 								{{ about_us.button_text }}
@@ -219,10 +188,10 @@
     <div class="container">
         <div class="row">
             <div class="section-header col-12">
-                <div class="title">
+                <div class="title" data-aos="fade-down" data-aos-delay="500">
                     <span>what we do</span>
                 </div>
-                <h2 class="section-title">Services</h2>
+                <h2 class="section-title" data-aos="fade-down" data-aos-delay="400">Services</h2>
             </div>
         </div>
 
@@ -230,9 +199,9 @@
             {% for s in services %}
             <div class="col-md-4">
                 <div class="services-item">
-                    <span class="number">{{ s.formatted_order }}</span>
-                    <h3>{{ s.title }}</h3>
-                    <p>{{ s.description }}</p>
+                    <span class="number" data-aos="fade-down" data-aos-delay="500">{{ s.formatted_order }}</span>
+                    <h3 data-aos="fade-down" data-aos-delay="500">{{ s.title }}</h3>
+                    <p data-aos="fade-down" data-aos-delay="400">{{ s.description }}</p>
                 </div>
 
                 {% if s.button_url %}
@@ -294,10 +263,10 @@
 				<div class="col">
 
 					<div class="section-header">
-						<div class="title">
+						<div class="title" data-aos="fade-down" data-aos-delay="500">
 							<span>News & Highlights</span>
 						</div>
-						<h2 class="section-title"> In the Know</h2>
+						<h2 class="section-title" data-aos="fade-down" data-aos-delay="400"> In the Know</h2>
 					</div>
 					
 				</div>
@@ -311,11 +280,11 @@
 						<div class="row">
 
 							{% for news in latest_news %}
-							<div class="col-md-4">
+							<div class="col-md-4 col-sm-12">
 
-								<article class="post-item">
+								<article class="post-item" data-aos="fade-down" data-aos-delay="500">
 
-									<figure>
+									<figure >
 										<a href="{% url 'news_detail' news.id %}" class="image-hvr-effect">
 											{% if news.featured_image %}
 												<img src="{{ news.featured_image.url }}" alt="{{ news.title }}" class="post-image">
@@ -326,12 +295,12 @@
 									</figure>
 
 									<div class="post-content">
-										<div class="meta-date">{{ news.publish_date|date:"M d, Y" }}</div>
-										<h3 class="post-title"><a href="{% url 'news_detail' news.id %}">  {{ news.title|truncatechars:25 }}</a></h3>
-										<p>{{ news.content|truncatewords:10 }}</p>
+										<div class="meta-date" data-aos="fade-out" data-aos-delay="600">{{ news.publish_date|date:"M d, Y" }}</div>
+										<h3 class="post-title" data-aos="fade-out" data-aos-delay="500"><a href="{% url 'news_detail' news.id %}">  {{ news.title|truncatechars:25 }}</a></h3>
+										<p data-aos="fade-out" data-aos-delay="400">{{ news.content|truncatewords:10 }}</p>
 										
 										
-										<div class="btn-wrap">
+										<div class="btn-wrap" data-aos="fade-out" data-aos-delay="400">
 											<a href="{% url 'news_detail' news.id %}" class="btn-with-line-black">Read More</a>
 										</div>
 
@@ -351,20 +320,12 @@
 
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col">
-					<div class="btn-wrap align-center col-3">
-						<a href="{% url 'news' %}" 
-							class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center" 
-							style="border-radius: 0 !important; min-width: 280px !important;">
-							<span>View all News</span>
-							<i class="fas fa-arrow-right"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-
+			<a href=" {% url 'news' %} " 
+				class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center"  data-aos="fade-out" data-aos-delay="500"
+				style="border-radius: 0 !important; min-width: 280px !important; max-width: 280px !important;">
+				<span style="font-size: 14px !important;">View all News</span>
+				<i class="fas fa-arrow-right"></i>
+			</a>
 		</div>
 	</section>
 
@@ -377,23 +338,23 @@
 				<div class="col">
 
 					<div class="section-header">
-						<div class="title">
+						<div class="title" data-aos="fade-down" data-aos-delay="500">
 							<span>Meet the people driving our success</span>
 						</div>
-						<h2 class="section-title">Our Team</h2>
+						<h2 class="section-title" data-aos="fade-down" data-aos-delay="400">Our Team</h2>
 					</div>
 				</div>
 
 			</div>
-			<div class="row justify-content-center g-4">
+			<div class="row g-4">
 				{% for member in team_members %}
 				<div class="col-md-6 col-lg-4 d-flex">
 					{% if member.image %}
 					<img src="{{ member.image.url }}" class="team-img me-3" alt="{{ member.name }}">
 					{% endif %}
 					<div class="text-start">
-						<h3 class="fw-bold mb-1">{{ member.name }}</h3>
-						<p class="text-muted mb-1">{{ member.position }}</p>
+						<h3 class="fw-bold mb-1" data-aos="fade-out" data-aos-delay="400">{{ member.name }}</h3>
+						<p class="text-muted mb-1" data-aos="fade-out" data-aos-delay="600">{{ member.position }}</p>
 						{% if member.description %}
 						<p class="small text-secondary mb-2">{{ member.description }}</p>
 						{% endif %}
@@ -409,7 +370,7 @@
 		<div class="container">
 
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6" data-aos="fade-out" data-aos-delay="500">
 
 					<div class="left-content">
 
@@ -439,7 +400,7 @@
 
 				</div><!--left-content-->
 
-				<div class="col-md-6">
+				<div class="col-md-6" data-aos="fade-out" data-aos-delay="700">
 					<div class="right-content">
 
 						<!-- <div class="iconbox">
@@ -486,7 +447,7 @@
 
 			<div class="row">
 			{% for insight in insights %}
-				<div class="col-md-6">
+				<div class="col-md-6" data-aos="fade-right" data-aos-delay="600">
 					{% if insight.image %}
 						<figure class="jarallax-keep-img testimonial-image" data-speed="0.5">
 							<img src="{{ insight.image.url }}" alt="insight image" class="jarallax-img">
@@ -498,20 +459,20 @@
 
 					<div class="testimonial-block">
 						<div class="section-header">
-							<div class="title">
+							<div class="title" data-aos="fade-down" data-aos-delay="500">
 								<span>In Their Own Words</span>
 							</div>
-							<h2 class="section-title"> Personal & engaging</h2>
+							<h2 class="section-title" data-aos="fade-down" data-aos-delay="400"> Personal & engaging</h2>
 						</div>
 						<div class="testimonials-inner">
-							<q>{{ insight.quote }}</q>
+							<q data-aos="fade-out" data-aos-delay="700">{{ insight.quote }}</q>
 							<!-- <div class="testimonial-author">
 								<div class="author-detail">
 									<div class="name">{{ insight.author_name }}</div>
 									<div class="author-title">{{ insight.author_title }}</div>
 								</div>
 							</div> -->
-							<div class="btn-wrap">
+							<div class="btn-wrap" data-aos="fade-out" data-aos-delay="500">
 								<a href="{% url 'member-lounge' %}" class="btn-with-line-black">Read More</a>
 							</div>
 						</div>
@@ -646,6 +607,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
 	<script src="{% static 'js/ui-easing.js' %}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -654,6 +617,16 @@
 	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script src="{% static 'js/plugins.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
+
+
+
+		
+	<script>
+		AOS.init({
+			duration: 1000,  
+			once: true,      
+		});
+	</script>
 
 
 

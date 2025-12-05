@@ -14,6 +14,8 @@
 	<meta name="keywords" content="Ghala Golf | Golf Academy">
 	<meta name="description" content="Ghala Golf | Golf Academy">
 
+	<link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+
 	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -29,6 +31,9 @@
 		rel="stylesheet">
 		
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
 
 	
@@ -81,23 +86,6 @@
 							</li>
 						</ul>
 					</div>
-					<!-- <div class="col-md-3 text-white">
-						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
-						<ul class="list-unstyled nav__block-item">
-							<li><a href="index.html" class="text-white">Onepage </a></li>
-							<li><a href="index.html" class="text-white">Styles </a></li>
-							<li><a href="index.html" class="text-white">Blog </a></li>
-							<li><a href="index.html" class="text-white">Single Post </a></li>
-							<li><a href="index.html" class="text-white">Contact us </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
-							<li><a href="index.html" class="text-white">About Us </a></li>
-							<li><a href="index.html" class="text-white">Our Team </a></li>
-						</ul>
-					</div> -->
 				</div>
 			</div>
 
@@ -115,15 +103,18 @@
 		</label>
 	</div>
 
+
+	
  
 
 	<section class="section-one">
+		
 		<div class="container d-flex justify-content-end">
-			<div class="col-sm-12 col-md-12 col-lg-8  membership-form">
-				<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-8  membership-form pb-0 ps-4 pe-4 pt-4" data-aos="fade-out" data-aos-delay="500">
+				<div class="row pb-0">
 					<h2 class="m-0 p-0 mb-2">Golf Academy Inquiry Form</h2>
                     <p class="form-subtitle text-center text-white p-0 m-0 mb-4">Get in touch to begin your training journey with our certified coaches.</p>
-					<form method="POST">
+					<form class="mb-0" method="POST">
 						{% csrf_token %}
 
 						<div class="form-group">
@@ -180,28 +171,28 @@
 
 
 
-	<section class="py-5 mb-5">
+	<section class="py-5 mb-5" data-aos="fade-out" data-aos-delay="500">
 		<div class="container mt-5 mb-5">
 			<div class="golf-academy-video position-relative overflow-hidden rounded-4">
 			
-			<img src="{{ content.thumbnail_image.url }}" class="img-fluid w-100" alt="{{ content.title }}" />
+				<img src="{{ content.thumbnail_image.url }}" class="img-fluid w-100" alt="{{ content.title }}" />
 
 
-			<div class="position-absolute top-0 start-0 w-100 h-100"
-				style="background: linear-gradient(90deg, rgba(0, 0, 0, 0.856) 0%, rgba(0, 0, 0, 0.411) 60%, transparent 100%);">
-			</div>
-
-			<div class="position-absolute top-50 start-0 translate-middle-y ms-5 text-white" style="max-width:350px;">
-				<h3 class="fw-semibold mb-3 text-white" style="font-size:24px;">
-				{{ content.title }}
-				</h3>
-			
-				<div class="btn-wrap align-center col-3 mt-5">
-				<div class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal">
-					<i class="fa-solid fa-play"></i>
+				<div class="position-absolute top-0 start-0 w-100 h-100"
+					style="background: linear-gradient(90deg, rgba(0, 0, 0, 0.856) 0%, rgba(0, 0, 0, 0.411) 60%, transparent 100%);">
 				</div>
+
+				<div class="position-absolute top-50 start-0 translate-middle-y text-white" style="max-width:350px;">
+					<h3 class="fw-semibold mb-3  ms-5 text-white" style="font-size:24px;" data-aos="fade-out" data-aos-delay="600">
+					{{ content.title }}
+					</h3>
+				
+					<div class="btn-wrap align-center col-3 mt-5" data-aos="fade-out" data-aos-delay="700">
+						<div class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal">
+							<i class="fa-solid fa-play"></i>
+						</div>
+					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 	</section>
@@ -229,72 +220,22 @@
 
 
 
-	<!-- <div class="container py-5 mt-5">
-		<div class="row ">
-			
-			<div class="col-lg-7 mb-4">
-				<div class="main-image-wrapper">
-					<img id="mainBg" class="main-bg" />
-					<img id="mainDisplay" src="{% static 'images/players/1.jpg' %}" class="main-image" alt="Large Preview">
-				</div>
-
-
-				<div class="slick-slider">
-					<div class="element element-1"><img src="{% static 'images/players/2.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-					<div class="element element-2"><img src="{% static 'images/players/3.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-					<div class="element element-3"><img src="{% static 'images/players/4.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-					<div class="element element-4"><img src="{% static 'images/players/5.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-					<div class="element element-5"><img src="{% static 'images/players/6.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-					<div class="element element-6"><img src="{% static 'images/players/7.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-					<div class="element element-7"><img src="{% static 'images/players/8.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-					<div class="element element-8"><img src="{% static 'images/players/9.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-					<div class="element element-9"><img src="{% static 'images/players/10.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-					<div class="element element-10"><img src="{% static 'images/players/11.jpg' %}" class="thumb-img" onclick="changeImage(this.src)"></div>
-				</div>
-				<div class="slick-controls text-center mt-3">
-					<button class="slick-prev-custom btn btn-light me-3">Prev</button>
-					<button class="slick-next-custom btn btn-light">Next</button>
-				</div>
-			</div>
-
-			<div class="col-lg-5 ">
-
-				<div>
-					<h1 class="fw-bold display-5">LOREM ISPUM<br>WILL GO<br>HERE.</h1>
-					<p class="mt-4">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus est dolorem distinctio enim iure numquam eius quidem asperiores a odit!
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reiciendis eligendi deserunt 
-						dignissimos sit nam nisi qui.aceat illum dignissimos alias natus
-						 ea laudantium possimus assumenda! Numquam,
-						  labore quibusdam?
-					</p>
-				</div>
-
-				<div class=" mb-4">
-					<a href="{% url 'news' %}" 
-						class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center"
-						style="border-radius: 0 !important; min-width: 280px !important;">
-						<span> EXPLORE MORE </span>
-						<i class="fas fa-arrow-right"></i>
-					</a>
-				</div>
-
-			</div>		
-		</div>
-	</div> -->
-
-	<section class="bg-light">
+	<section class="bg-dark">
 		<div class="container py-5 mt-5">
 			<div class="row">
-				<div class="col-lg-7 mb-4">
+				<div class="col-lg-7 mb-4" data-aos="fade-out" data-aos-delay="500">
 					<div class="main-image-wrapper">
 						<img id="mainBg" class="main-bg" />
+						
 						
 						{% if gallery.first.image_main %}
 							<img id="mainDisplay" src="{{ gallery.first.image_main.url }}" class="main-image" alt="Large Preview">
 						{% else %}
 							<img id="mainDisplay" src="{% static 'images/default_image.jpg' %}" class="main-image" alt="Large Preview">
 						{% endif %}
+
+						<button class="slick-prev-custom main-prev-btn gallery-btn btn btn-light">❮</button>
+						<button class="slick-next-custom main-next-btn gallery-btn btn btn-light">❯</button>
 					</div>
 
 					<div class="slick-slider">
@@ -306,27 +247,23 @@
 						{% endfor %}
 					</div>
 
-					<div class="slick-controls text-center mt-3">
-						<button class="slick-prev-custom btn btn-light me-3">Prev</button>
-						<button class="slick-next-custom btn btn-light">Next</button>
-					</div>
 				</div>
 
-				<div class="col-lg-5">
-					<div class=" pb-1">
+				<div class="col-lg-5 d-flex flex-column justify-content-between mb-4" >
+					<div class=" pb-1" >
 						{% if content %}
-							<h2 class="fw-bold display-5">{{ gallery_description.title|linebreaksbr }}</h2>
-							<p class="mt-4">{{ gallery_description.description }}</p>
+							<h2 class="fw-bold display-5 text-white" data-aos="fade-out" data-aos-delay="500">{{ gallery_description.title|linebreaksbr }}</h2>
+							<p class="mt-5" data-aos="fade-out" data-aos-delay="700">{{ gallery_description.description }}</p>
 						{% else %}
-							<h1 class="fw-bold display-5">MASTER THE FUNDAMENTALS AND ADVANCE YOUR SKILLS</h1>
-							<p class="mt-4">
+							<h1 class="fw-bold display-5" data-aos="fade-out" data-aos-delay="500">MASTER THE FUNDAMENTALS AND ADVANCE YOUR SKILLS</h1>
+							<p class="mt-4" data-aos="fade-out" data-aos-delay="700">
 								Ghala Golf Academy offers a complete training experience using world-class teaching methods and modern performance technology. Our coaches focus on all aspects of your game — from grip and stance to shot selection, course management, and mental focus.
 								With video swing analysis, personalized drills, and progress tracking, our programs are designed to make every practice session efficient and purposeful. Whether you're refining your skills or building your game, you'll gain the confidence and ability to perform at your best on any course.
 							</p>
 						{% endif %}
 					</div>
 
-					<div class="mb-4">
+					<div class="mb-3" data-aos="fade-out" data-aos-delay="700">
 						<a href="{% url 'membership' %}" class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center" style="border-radius: 0 !important; min-width: 280px !important;">
 							<span>EXPLORE MEMBERSHIP OPTIONS</span>
 							<i class="fas fa-arrow-right"></i>
@@ -458,6 +395,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
 	<script src="{% static 'js/ui-easing.js' %}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -468,6 +408,14 @@
 	<script src="{% static 'js/plugins.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
 	
+
+	<script>
+		AOS.init({
+			duration: 1000,  
+			once: true,      
+		});
+	</script>
+
 
 	<script>
 		$('.slick-slider').slick({
