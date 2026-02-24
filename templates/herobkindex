@@ -1,0 +1,42 @@
+<section id="intro" class="scrollspy-section">
+		<div class="main-slider">
+			<div class="slider-item jarallax" data-speed="0.2">
+				<img src="{% static 'images/hero.jpg' %}" alt="banner" class="jarallax-img">
+				<div class="banner-content">
+					<h2 class="banner-title txt-fx">Ghala Golf Club</h2>
+					<div class="btn-wrap">
+						<a href="#" class="btn-with-line">View More</a>
+					</div>
+				</div><!--banner-content-->
+			</div><!--slider-item-->
+
+			<div class="slider-item jarallax" data-speed="0.2">
+				<img src="{% static 'images/hero2.jpg' %}" alt="banner" class="jarallax-img">
+				<div class="banner-content">
+					<h2 class="banner-title txt-fx">Since 1972</h2>
+					<div class="btn-wrap">
+						<a href="#" class="btn-with-line">View More</a>
+					</div>
+				</div><!--banner-content-->
+			</div><!--slider-item-->
+
+			<div class="slider-item jarallax" data-speed="0.2">
+				<img src="{% static 'images/hero3.jpg' %}" alt="banner" class="jarallax-img">
+				<div class="banner-content">
+					<h2 class="banner-title txt-fx">The First In GCC</h2>
+					<div class="btn-wrap">
+						<a href="#" class="btn-with-line">View More</a>
+					</div>
+				</div><!--banner-content-->
+			</div><!--slider-item-->
+		</div><!--slider-->
+
+		<div class="button-container">
+			<button class="prev slick-arrow">
+				<i class="icon icon-chevron-thin-left"></i>
+			</button>
+			<button class="next slick-arrow">
+				<i class="icon icon-chevron-thin-right"></i>
+			</button>
+		</div>
+	</section>

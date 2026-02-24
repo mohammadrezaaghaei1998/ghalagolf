@@ -1,0 +1,388 @@
+
+
+.parallax {
+    /* display: grid; */
+    place-content: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)   0%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -2;
+    Text: Bold, 100%;
+  
+}
+
+.p1 {
+    /* background-image: url('images/here.jpg'); */
+    background-position: center;
+    justify-content: center;     
+    align-items: center;        
+    text-align: center;         
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+}
+
+.parallax::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit; 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(60%) blur(4px); 
+    z-index: -1; 
+}
+
+.parallax::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.034);
+    z-index: -1;
+}
+
+/* Your code here */
+
+.p3 {
+/*     https://unsplash.com/photos/silhouette-of-person-standing-under-starry-sky-ju-dVR1jkmE */
+    background-image: url(https://images.unsplash.com/photo-1564053051381-5cb91813736b?q=80&w=2710&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+}
+
+.container {
+  padding: 2em;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.4em;
+/*  https://cssgenerator.org/text-shadow-css-generator.html  */
+    text-shadow: 3px 3px 2px rgba(0,0,0,0.6);
+}
+
+/* p {
+    font-size: 1.2em;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+} */
+
+
+#content {
+    /* height:70vh; */
+    /* background-color: var(--dark-color); */
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+h2 {
+    font-size: 1.9em;
+}
+
+.text {
+    width: 80%;
+    letter-spacing: 0.075em;
+    line-height: 1.7em;
+    text-align: center;
+    font-size: 1.1em;
+    text-transform: none;
+}
+
+.p1,
+.p3 {
+  min-height: 60vh;
+}
+
+.p1 .container,
+.p3 .container {
+  padding: 4em 2em;
+}
+
+
+
+
+
+
+
+
+
+
+/************************************* Contact Us Form ***************************/
+
+.contact-box {
+  
+  /* background: #FFFFFF ; */
+  padding: 2rem;
+  border-radius: 16px;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); */
+  /* text-align: center; */
+}
+
+.contact-box h2 {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 1rem;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.contact-box h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color);
+  /* margin: 1rem auto 1.5rem; */
+  border-radius: 2px;
+}
+
+.contact-lead {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.contact-box p {
+  color: #aaa;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: var(--accent-color);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-item {
+  position: relative;
+}
+
+.form-item input,
+.form-item textarea {
+  width: 100%;
+  padding: 10px 6px;
+  border: none;
+  border-bottom: 2px solid black;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+}
+
+.form-item label {
+  position: absolute;
+  /* left: 6px; */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.form-item:has(textarea) label {
+  top: 75%;
+}
+
+.form-item input:focus + label,
+.form-item textarea:focus + label,
+.form-item input:not(:placeholder-shown) + label,
+.form-item textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: black;
+}
+
+.form-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-button:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.form-button:active {
+  background-color: var(--accent-color);
+}
+
+
+.contact-info {
+  border-radius: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px 40px;
+  user-select: none;
+}
+
+
+
+.contact-info .contact-item {
+  font-size: 1.15rem;
+  color: #000000;
+  position: relative;
+  cursor: default;
+  transition: color 0.4s ease;
+ 
+}
+.contact-item-border{
+ border-right: 2px solid #daa556;
+}
+
+.contact-info .contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-info .contact-item i {
+  color: #daa556; 
+  font-size: 1.8rem;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.contact-info .contact-item:hover {
+  color: #daa556;
+}
+
+.contact-info .contact-item:hover i {
+  color: #daa556;
+  text-shadow: 0 0 8px #daa556;
+}
+
+.contact-info h2 {
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  user-select: text;
+}
+
+@media (max-width: 576px) {
+  .contact-info {
+    padding: 20px 25px;
+  }
+  .contact-info .contact-item {
+    font-size: 1.1rem;
+  }
+  .contact-info .contact-item i {
+    font-size: 1.5rem;
+  }
+}
+
+/* 
+@media (min-width: 992px) {
+ .map{
+  margin-top: 40px !important;
+ }
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .contactus-header h1 {
+    
+    font-size: clamp(22px, 2vw,70px);
+    font-weight: 700;
+    letter-spacing: 5px !important;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: titleReveal 1.5s ease forwards 0.8s;
+    color: #fff;
+    text-shadow: 
+        0 0 40px rgba(120, 100, 110, 0.5),
+        0 5px 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+        letter-spacing: 30px;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 18px;
+    }
+}
+
+
+
+
+
+.contactus-header p {
+    
+  
+    letter-spacing: 1px !important;
+    font-size: 16px !important;
+    opacity: 0;
+    animation: titleReveal 2s ease forwards 1s;
+    color: #fff;
+    
+    
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+        letter-spacing: 30px;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 18px;
+    }
+}

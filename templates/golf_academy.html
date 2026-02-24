@@ -1,0 +1,506 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<title>Ghala Golf | Golf Academy</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="Ghala Golf | Golf Academy">
+	<meta name="keywords" content="Ghala Golf | Golf Academy">
+	<meta name="description" content="Ghala Golf | Golf Academy">
+
+	<link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'icomoon/icomoon.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/membership.css' %}">
+	<link rel="stylesheet" href="{% static 'css/golf_academy.css' %}">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+		
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+
+	
+
+		
+</head>
+
+<body>
+
+	<div class="preloader"></div>
+
+	<div class="nav nav-overlay">
+		<div class="nav__content">
+			<div class="container">
+				<div class="row p-4 p-md-0 flex-column-reverse flex-md-row g-md-5 nav__block">
+					<div class="col-md-4">
+						<ul class="nav__list d-md-block">
+							<li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
+							<li class="nav__list-item " ><a href="{% url 'about-us' %}" class="hover-target">About Us</a></li>
+							<li class="nav__list-item"><a href="{% url 'news' %}" class="hover-target">News</a></li>
+							<li class="nav__list-item"><a href="{% url 'membership' %}" class="hover-target">Membershp</a></li>
+							<li class="nav__list-item  active-nav"><a href="{% url 'golf-academy' %}" class="hover-target">Golf Academy</a></li>
+							<li class="nav__list-item"><a href="{% url 'calendar' %}" class="hover-target">Calendar</a></li>
+							<li class="nav__list-item  "><a href="{% url 'gallery' %}" class="hover-target">Gallery</a></li>
+							<li class="nav__list-item"><a href="{% url 'sponsors' %}" class="hover-target">Sponsors</a></li>
+							<li class="nav__list-item"><a href="{% url 'member-lounge' %}" class="hover-target">Member Lounge</a></li>
+							<li class="nav__list-item "><a href="{% url 'contact-us' %}" class="hover-target">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<h3 class="text-white fw-bold nav__block-item">Unwind, Play, Connect</h3>
+						<p class="text-light nav__block-item">Rooted in history and inspired by nature, Ghala Golf Club is dedicated to providing an exceptional environment to unwind, challenge yourself, and connect with others.
+						</p>
+						
+					</div>
+					<div class="col-md-4 text-white nav-hide">
+						<ul class="list-unstyled text-light nav__block-item">
+							<li class="menu-item">
+								<i class="icon icon-location me-2"></i>2Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+							</li>
+							<li class="menu-item ">
+								<i class="icon icon-phone me-2 "></i>
+								+968 9219 4957
+							</li>
+							<li class="menu-item">
+								<i class="icon icon-envelope-o me-2"></i>
+								<a href="mailto:proshop@ghalagolf.com"
+									class="text-light">proshop@ghalagolf.com
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-logo">
+		<a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+	</div>
+
+	<div class="side-nav-bar">
+		<input id="menu-toggle" type="checkbox" />
+		<label class="menu-btn" for="menu-toggle">
+			<span></span>
+		</label>
+	</div>
+
+
+	
+ 
+
+	<section class="section-one">
+		
+		<div class="container d-flex justify-content-end">
+			<div class="col-sm-12 col-md-12 col-lg-8  membership-form pb-0 ps-4 pe-4 pt-4" data-aos="fade-up" data-aos-delay="500">
+				<div class="row pb-0">
+					<h2 class="m-0 p-0 mb-2">Golf Membership  Inquiry Form</h2>
+                    <p class="form-subtitle text-center text-white p-0 m-0 mb-4">Get in touch to begin your training journey with our certified coaches.</p>
+					<form class="mb-0" method="POST">
+						{% csrf_token %}
+
+						<div class="form-group">
+							<input type="text" class="form-control" name="full_name" id="full_name" placeholder=" " required>
+							<label for="full_name">Full Name</label>
+						</div>
+
+						<div class="form-group">
+							<input type="email" class="form-control" name="email" id="email" placeholder=" " required>
+							<label for="email">Email Address</label>
+						</div>
+
+						<div class="form-group">
+							<input type="tel" class="form-control" name="phone" id="phone" placeholder=" " required>
+							<label for="phone">Phone Number</label>
+						</div>
+
+						<div class="form-group">
+							<select id="membership_type" name="membership_type" class="form-select" required>
+								<option value="" disabled selected hidden></option>
+								<option>Individual</option>
+								<option>Family</option>
+								<option>Corporate</option>
+								<option>Junior</option>
+								<option>Seasonal</option>
+							</select>
+							<label for="membership_type">Membership Type</label>
+						</div>
+
+						<div class="form-group">
+							<textarea class="form-control" name="message" id="message" rows="3" placeholder=" "></textarea>
+							<label for="message">Additional Notes</label>
+						</div>
+
+						<div class="form-group">
+							<input type="number" class="form-control" name="handicap" id="handicap" placeholder=" ">
+							<label for="handicap">Golf Handicap (Optional)</label>
+						</div>
+
+						<div class="form-group">
+							<input type="date" class="form-control" name="dob" id="dob" placeholder=" " required>
+							<label for="dob">Date of Birth</label>
+						</div>
+
+						<button type="submit" class="btn btn-submit mt-3">Send Application</button>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	<section class="py-5 mb-5" >
+		<div class="container mt-5 mb-5" data-aos="fade-up" data-aos-delay="500">
+			<div class="golf-academy-video position-relative overflow-hidden rounded-4">
+			
+				<img src="{{ content.thumbnail_image.url }}" class="img-fluid w-100" alt="{{ content.title }}" / >
+
+
+				<div class="position-absolute top-0 start-0 w-100 h-100"
+					style="background: linear-gradient(90deg, rgba(0, 0, 0, 0.856) 0%, rgba(0, 0, 0, 0.411) 60%, transparent 100%);">
+				</div>
+
+				<div class="position-absolute top-50 start-0 translate-middle-y text-white" style="max-width:350px;">
+					<h3 class="fw-semibold mb-3  ms-5 text-white" style="font-size:24px;" data-aos="fade-up" data-aos-delay="600">
+					{{ content.title }}
+					</h3>
+				
+					<div class="btn-wrap align-center col-3 mt-5" data-aos="fade-up" data-aos-delay="700">
+						<div class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal">
+							<i class="fa-solid fa-play"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Video Modal -->
+	<div class="modal fade" id="videoModal" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content bg-dark p-0">
+
+			<div class="modal-header border-0">
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+
+			<div class="modal-body p-0 align-center" style="max-width: 400px !important;">
+				<video id="academyVideo" class="w-100 align-center" controls>
+				<source src="{{ content.video_file.url }}" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+			</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<section class="bg-dark">
+		<div class="container py-5 mt-5">
+			<div class="row">
+				<div class="col-lg-7 mb-4" data-aos="fade-up" data-aos-delay="500">
+					<div class="main-image-wrapper">
+						<img id="mainBg" class="main-bg" />
+						
+						
+						{% if gallery.first.image_main %}
+							<img id="mainDisplay" src="{{ gallery.first.image_main.url }}" class="main-image" alt="Large Preview">
+						{% else %}
+							<img id="mainDisplay" src="{% static 'images/default_image.jpg' %}" class="main-image" alt="Large Preview">
+						{% endif %}
+
+						<button class="slick-prev-custom main-prev-btn gallery-btn btn btn-light">❮</button>
+						<button class="slick-next-custom main-next-btn gallery-btn btn btn-light">❯</button>
+					</div>
+
+					<div class="slick-slider">
+						{% for gallery_item in gallery %}
+							<div class="element">
+								<img src="{{ gallery_item.image.url }}" class="thumb-img" 
+									onclick="changeImage('{% if gallery_item.image_main %}{{ gallery_item.image_main.url }}{% else %}{% static 'images/default_image.jpg' %}{% endif %}')">
+							</div>
+						{% endfor %}
+					</div>
+
+				</div>
+
+				<div class="col-lg-5 d-flex flex-column justify-content-between mb-4" >
+					<div class=" pb-1" >
+						{% if content %}
+							<h2 class="fw-bold display-5 text-white" data-aos="fade-up" data-aos-delay="500">{{ gallery_description.title|linebreaksbr }}</h2>
+							<p class="mt-5" data-aos="fade-up" data-aos-delay="700">{{ gallery_description.description }}</p>
+						{% else %}
+							<h1 class="fw-bold display-5" data-aos="fade-up" data-aos-delay="500">MASTER THE FUNDAMENTALS AND ADVANCE YOUR SKILLS</h1>
+							<p class="mt-4" data-aos="fade-up" data-aos-delay="700">
+								Ghala Golf Academy offers a complete training experience using world-class teaching methods and modern performance technology. Our coaches focus on all aspects of your game — from grip and stance to shot selection, course management, and mental focus.
+								With video swing analysis, personalized drills, and progress tracking, our programs are designed to make every practice session efficient and purposeful. Whether you're refining your skills or building your game, you'll gain the confidence and ability to perform at your best on any course.
+							</p>
+						{% endif %}
+					</div>
+
+					<div class="mb-3" data-aos="fade-up" data-aos-delay="700">
+						<a href="{% url 'membership' %}" class="btn btn-xlarge btn-accent btn-rounded d-flex justify-content-between align-items-center" style="border-radius: 0 !important; min-width: 280px !important;">
+							<span>EXPLORE MEMBERSHIP OPTIONS</span>
+							<i class="fas fa-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+	<footer id="footer">
+		
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-01">
+							<img src="{% static 'images/logo.png' %}" alt="logo" class="footer-logo">
+							<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iste consequatur nulla iusto omnis aliquam alias at libero? Voluptates, minus!</p> -->
+							
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-02">
+							<h5>quick links</h5>
+							<ul class="menu-list">
+								<li class="menu-item">
+									<a href="{% url 'index' %}">home</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'about-us' %}">about us </a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'membership' %}">membership</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'calendar' %}">calendar</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'news' %}">news</a>
+								</li>
+								
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-03">
+							<h5>contact info</h5>
+							<ul class="menu-list">
+								
+								<li class="menu-item">
+									<i class="icon icon-location2"></i>Way 63, Muscat Express Way، Ansab/Athaiba Exit, Before Al-Muna area، Baushar
+								</li>
+								<li class="menu-item">
+									<i class="icon icon-phone"></i>+968 9219 4957
+								</li>
+								<li class="menu-item">
+									<i class="icon icon-envelope-o"></i><a href="mailto:proshop@ghalagolf.com" class="mail-id">proshop@ghalagolf.com</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<div class="footer-menu menu-item-04">
+							<h5>Follow Us</h5>
+							<div class="social-links">
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/GhalaGolfClub/"><i class="icon icon-facebook"></i></a>
+									</li>
+									
+									<li>
+										<a href="https://www.instagram.com/ghalagolfclub?igsh=MTl0eW5udzcyb2FsbA=="><i class="fab fa-instagram"></i></a>
+									</li>
+									<li>
+										<a href="https://www.linkedin.com/company/ghala-golf-club/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="copyright">
+						<p> All rights reserved.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="copyright text-right">
+						<p>© 2025 <a href="{% url 'index' %}"target="_blank">Ghala Golf Club.</a> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+	<script src="{% static 'js/ui-easing.js' %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+		
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+	
+
+	<script>
+		AOS.init({
+			duration: 1000,  
+			once: true,      
+		});
+		
+	</script>
+
+
+	<script>
+		$('.slick-slider').slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			infinite: false,
+			arrows: true,
+			prevArrow: $('.slick-prev-custom'),
+			nextArrow: $('.slick-next-custom')
+		});
+	</script>
+
+
+
+	<script>
+		const videoModal = document.getElementById('videoModal');
+		const academyVideo = document.getElementById('academyVideo');
+
+		videoModal.addEventListener('shown.bs.modal', () => {
+			academyVideo.play();
+		});
+
+		videoModal.addEventListener('hidden.bs.modal', () => {
+			academyVideo.pause();
+			academyVideo.currentTime = 0;
+		});
+	</script>
+
+
+
+
+	<script>
+		function changeImage(src) {
+			const main = document.getElementById("mainDisplay");
+			const bg = document.getElementById("mainBg");
+
+			bg.src = src;
+			bg.style.opacity = 1;
+
+			main.classList.add("fade-zoom-out");
+
+			setTimeout(() => {
+				main.src = src;
+
+				main.classList.remove("fade-zoom-out");
+				main.classList.add("fade-zoom-in");
+
+				setTimeout(() => {
+					bg.style.opacity = 0;
+					main.classList.remove("fade-zoom-in");
+				}, 800); 
+
+			}, 600); 
+		}
+
+	</script>
+
+
+
+
+
+
+
+
+	<script>
+		{% if messages %}
+			{% for message in messages %}
+				toastr.options = {
+					"closeButton": true,
+					"progressBar": true,
+					"timeOut": "5000"
+				};
+
+				{% if message.tags == "success" %}
+					toastr.success("{{ message }}");
+				{% elif message.tags == "error" %}
+					toastr.error("{{ message }}");
+				{% else %}
+					toastr.info("{{ message }}");
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</script>
+
+</body>
+
+</html>
