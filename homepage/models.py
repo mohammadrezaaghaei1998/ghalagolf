@@ -78,6 +78,25 @@ class TeamMember(models.Model):
 
 
 
+
+class BoardMember(models.Model):
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='team_images/', blank=True, null=True, help_text="Upload a board member's photo")
+    description = models.TextField(blank=True, null=True, help_text="Short bio or description for the board member")
+
+    order = models.PositiveIntegerField(default=0, help_text="Ordering of board members on the page")
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = "Board Member"
+        verbose_name_plural = "Board Members"
+
+    def __str__(self):
+        return self.name
+
+
+
 class Insight(models.Model):
     quote = models.TextField(help_text="Personal and engaging statement")
     author_name = models.CharField(max_length=100)

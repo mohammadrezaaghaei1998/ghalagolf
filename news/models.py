@@ -19,16 +19,49 @@ class NewsHeader(models.Model):
 
 
 
+# class News(models.Model):
+#     title = models.CharField(max_length=255)
+#     author = models.CharField(max_length=100)
+#     category = models.CharField(max_length=100)
+#     publish_date = models.DateField()
+#     content = models.TextField()
+#     featured_image = models.ImageField(upload_to='news_images/', blank=True, null=True)
+
+#     def __str__(self):
+#         return self.title
+
+#     class Meta:
+#         ordering = ['-publish_date']
+
+
+
+
 class News(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
     publish_date = models.DateField()
     content = models.TextField()
-    featured_image = models.ImageField(upload_to='news_images/', blank=True, null=True)
+    featured_image = models.ImageField(
+        upload_to='news_images/',
+        blank=True,
+        null=True
+    )
 
     def __str__(self):
         return self.title
 
     class Meta:
         ordering = ['-publish_date']
+
+
+class NewsImage(models.Model):
+    news = models.ForeignKey(
+        News,
+        on_delete=models.CASCADE,
+        related_name='images'
+    )
+    image = models.ImageField(upload_to='news_images/')
+
+    def __str__(self):
+        return f"{self.news.title} - {self.image.name}"

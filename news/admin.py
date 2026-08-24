@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NewsHeader, News
+from .models import NewsHeader, News,NewsImage
 
 # Register your models here.
 
@@ -14,3 +14,12 @@ class NewsAdmin(admin.ModelAdmin):
     list_filter = ('category', 'publish_date')
     search_fields = ('title', 'author', 'content')
     ordering = ('-publish_date',)
+
+
+
+
+
+
+@admin.register(NewsImage)
+class NewsImageAdmin(admin.ModelAdmin):
+    list_display = ('news', 'image')

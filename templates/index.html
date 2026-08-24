@@ -339,9 +339,46 @@
 
 					<div class="section-header">
 						<div class="title" data-aos="fade-down" data-aos-delay="500">
+							<span>Meet the leaders behind our vision and direction</span>
+						</div>
+						<h2 class="section-title" data-aos="fade-down" data-aos-delay="400">Board Members</h2>
+					</div>
+				</div>
+
+			</div>
+			<div class="row g-4">
+				{% for member in board_members %}
+				<div class="col-md-6 col-lg-4 d-flex">
+					{% if member.image %}
+					<img src="{{ member.image.url }}" class="team-img me-3" alt="{{ member.name }}">
+					{% endif %}
+					<div class="text-start">
+						<h3 class="fw-bold mb-1" data-aos="fade-out" data-aos-delay="400">{{ member.name }}</h3>
+						<p class="text-muted mb-1" data-aos="fade-out" data-aos-delay="600">{{ member.position }}</p>
+						{% if member.description %}
+						<p class="small text-secondary mb-2">{{ member.description }}</p>
+						{% endif %}
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+		</div>
+	</section>
+
+
+	<section class="team-section   ">
+		
+		<div class="container">
+			<div class="row mb-5">
+
+				<div class="col">
+
+					<div class="section-header">
+						<div class="title" data-aos="fade-down" data-aos-delay="500">
 							<span>Meet the people driving our success</span>
 						</div>
-						<h2 class="section-title" data-aos="fade-down" data-aos-delay="400">Our Team</h2>
+						<h2 class="section-title" data-aos="fade-down" data-aos-delay="400">Management Team</h2>
 					</div>
 				</div>
 
@@ -365,6 +402,9 @@
 
 		</div>
 	</section>
+
+
+	
 
 	<section id="contact" class="scrollspy-section bg-dark padding-large">
 		<div class="container">

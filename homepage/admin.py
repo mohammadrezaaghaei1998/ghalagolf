@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import HomePageHeader,Service,AboutUs,TeamMember,Insight,ContactMessage,ContactInfo
+from .models import HomePageHeader,Service,AboutUs,TeamMember,BoardMember, Insight,ContactMessage,ContactInfo
 
 # Register your models here.
 
@@ -31,5 +31,6 @@ class InsightAdmin(admin.ModelAdmin):
 
 admin.site.register(AboutUs)
 admin.site.register(TeamMember)
+admin.site.register(BoardMember)
 admin.site.register(ContactMessage)
 admin.site.register(ContactInfo)

@@ -39,3 +39,5 @@ def news_detail(request, pk):
     }
     return render(request, 'news_detail.html', context)
 
+
+

@@ -111,7 +111,7 @@
 
 			<!-- Content + Sidebar -->
 			<div class="row">
-				<div class="col-lg-9">
+				<!-- <div class="col-lg-9">
 					<div class="blog__item__list">
 						<div class="blog__item">
 
@@ -122,6 +122,55 @@
 							{% endif %}
 
 							<div class="blog__item__text p-0 pt-5" data-aos="fade-up" data-aos-delay="400">
+								{{ news.content|linebreaks }}
+							</div>
+
+						</div>
+					</div>
+				</div> -->
+
+				
+				<div class="col-lg-9">
+					<div class="blog__item__list">
+						<div class="blog__item">
+
+							<div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+
+								<div class="carousel-inner">
+
+									{% for image in news.images.all %}
+									<div class="carousel-item {% if forloop.first %}active{% endif %}">
+										<img src="{{ image.image.url }}"
+											class="d-block w-100"
+											alt="{{ news.title }}">
+									</div>
+									{% endfor %}
+
+								</div>
+								{% if news.images.count > 1 %}
+
+									<!-- Previous -->
+									<button class="carousel-control-prev" type="button"
+											data-bs-target="#newsCarousel"
+											data-bs-slide="prev">
+										<span class="carousel-control-prev-icon"></span>
+										<span class="visually-hidden">Previous</span>
+									</button>
+
+									<!-- Next -->
+									<button class="carousel-control-next" type="button"
+											data-bs-target="#newsCarousel"
+											data-bs-slide="next">
+										<span class="carousel-control-next-icon"></span>
+										<span class="visually-hidden">Next</span>
+									</button>
+								{% endif %}
+
+							</div>
+
+							<div class="blog__item__text p-0 pt-5"
+								data-aos="fade-up"
+								data-aos-delay="400">
 								{{ news.content|linebreaks }}
 							</div>
 
